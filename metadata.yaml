@@ -10,14 +10,14 @@ team:  "[!] Name of your dev team"  # Le nom de votre équipe tel qu'il apparaî
 motto: "Yeah, well, you know, that's just, like, your opinion, man." # Le slogan de votre équipe
 members:  # Liste des membres de l'équipe (ajoutez un bloc par membre)
   # --- Premier membre ---
-  - firstname: "[!] First Name"   # Prénom
-    lastname: "[!] Last Name"     # Nom
-    nickname: "Nickname"          # Pseudo
-    group: "[!] INF_Sx_yZ"        # Groupe de TP (Ex : INF_S2_3A)
-    bestgame: "Target Renegade"   # Jeu préféré de tous les temps
-    momentgame: "Jupyter"         # Jeu préféré du moment
-    ostgame: "Save The Poulettes" # Bande son / musique de jeu vidéo préférée
-    character: "Fruity Franck"    # Personnage de jeu vidéo préféré
+  - firstname: "Charles"   # Prénom
+    lastname: "Thorin"     # Nom
+    nickname: "Swaybee"          # Pseudo
+    group: "INF_S3_3B"        # Groupe de TP (Ex : INF_S2_3A)
+    bestgame: "The Legend of Zelda: Breath of the Wild"   # Jeu préféré de tous les temps
+    momentgame: "Tekken 8"         # Jeu préféré du moment
+    ostgame: "Gravity Rush" # Bande son / musique de jeu vidéo préférée
+    character: "Ellie (TLOU)"    # Personnage de jeu vidéo préféré
   # --- Deuxième membre ---
   - firstname: "[!]First Name"             # Prénom
     lastname: "[!]Last Name"               # Nom

@@ -19,14 +19,14 @@ members:  # Liste des membres de l'équipe (ajoutez un bloc par membre)
     ostgame: "Gravity Rush" # Bande son / musique de jeu vidéo préférée
     character: "Ellie (TLOU)"    # Personnage de jeu vidéo préféré
   # --- Deuxième membre ---
-  - firstname: "[!]First Name"             # Prénom
-    lastname: "[!]Last Name"               # Nom
-    nickname: "Nickname"                   # Pseudo
-    group: "[!]INF_Sx_yZ"                  # Groupe de TP (Ex : INF_S4_2B)
-    bestgame: "Frogger"                    # Jeu préféré de tous les temps
-    momentgame: "Didier Gillard Simulator" # Jeu préféré du moment
-    ostgame: "Arkanoid Ending theme"       # Bande son / musique de jeu vidéo préférée
-    character: "The square"                # Personnage préféré
+  - firstname: "Ilan"             # Prénom
+    lastname: "Rigolio"               # Nom
+    nickname: ""                   # Pseudo
+    group: "INF_S3_3B"                  # Groupe de TP (Ex : INF_S4_2B)
+    bestgame: "Outer Wilds"                    # Jeu préféré de tous les temps
+    momentgame: "No, I'm not a human" # Jeu préféré du moment
+    ostgame: "Fallen Down (Undertale)"       # Bande son / musique de jeu vidéo préférée
+    character: ""                # Personnage préféré
 engine: "Unity" # Moteur de jeu utilisé (exemples : "Pygame" "Phaser" "Godot" "Unity" "Unreal" "Custom/Python" "Custom/Javascript")
 credits:
   - audio: "self production"                          # Audio

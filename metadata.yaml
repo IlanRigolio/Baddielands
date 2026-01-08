@@ -45,7 +45,7 @@ members:  # Liste des membres de l'équipe (ajoutez un bloc par membre)
     momentgame: "No, I'm not a human" # Jeu préféré du moment
     ostgame: "Spider dance - Undertale"       # Bande son / musique de jeu vidéo préférée
     character: "Gaster (Undertale)"                # Personnage préféré
-engine: "Unity" # Moteur de jeu utilisé (exemples : "Pygame" "Phaser" "Godot" "Unity" "Unreal" "Custom/Python" "Custom/Javascript")
+engine: "Godot" # Moteur de jeu utilisé (exemples : "Pygame" "Phaser" "Godot" "Unity" "Unreal" "Custom/Python" "Custom/Javascript")
 credits:
   - audio: "Baetens Julien"                          # Audio
   - graphics: "Martin Lesliana"                       # Graphismes

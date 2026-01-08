@@ -27,9 +27,27 @@ members:  # Liste des membres de l'équipe (ajoutez un bloc par membre)
     momentgame: "No, I'm not a human" # Jeu préféré du moment
     ostgame: "Fallen Down (Undertale)"       # Bande son / musique de jeu vidéo préférée
     character: ""                # Personnage préféré
+    # --- Troisième membre ---
+  - firstname: "Julien"             # Prénom
+    lastname: "Baetens"               # Nom
+    nickname: "K1EV"                   # Pseudo
+    group: "INF_S3_3B"                  # Groupe de TP (Ex : INF_S4_2B)
+    bestgame: "Garry's Mod"                    # Jeu préféré de tous les temps
+    momentgame: "Minecraft" # Jeu préféré du moment
+    ostgame: "Metro 2033 - Departure"       # Bande son / musique de jeu vidéo préférée
+    character: "Le colonel Sanders de KFC / Plus sérieusement William Blakowicz (Wolfenstein)"                # Personnage préféré
+    # --- Quatrième membre ---
+  - firstname: "Lesliana"             # Prénom
+    lastname: "Martin"               # Nom
+    nickname: "Lesli (ne l'appelez SURTOUT PAS Lesliana)"                   # Pseudo
+    group: "Exterieure à l'établissement"             # Groupe de TP (Ex : INF_S4_2B)
+    bestgame: "Undertale"                    # Jeu préféré de tous les temps
+    momentgame: "No, I'm not a human" # Jeu préféré du moment
+    ostgame: "Spider dance - Undertale"       # Bande son / musique de jeu vidéo préférée
+    character: "Gaster (Undertale)"                # Personnage préféré
 engine: "Unity" # Moteur de jeu utilisé (exemples : "Pygame" "Phaser" "Godot" "Unity" "Unreal" "Custom/Python" "Custom/Javascript")
 credits:
-  - audio: "self production"                          # Audio
-  - graphics: "self production"                       # Graphismes
-  - thanks: "My friends, my family, and Eric Cantona" # Remerciements
-message: "?" # Information ou message à ajouter, et qui ne correspondait à aucun item de ce template
+  - audio: "Baetens Julien"                          # Audio
+  - graphics: "Martin Lesliana"                       # Graphismes
+  - thanks: "My friends, my family, and Frank Leboeuf" # Remerciements
+message: "J'apprécie particulièrement les fraises tagada." # Information ou message à ajouter, et qui ne correspondait à aucun item de ce template

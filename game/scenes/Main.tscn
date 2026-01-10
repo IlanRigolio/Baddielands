@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://8eocufnpxqy0"]
+
+[ext_resource type="PackedScene" uid="uid://c8a4tc3pb07c1" path="res://blueprints/player.tscn" id="1_elqb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
+size = Vector2(38, 219)
+
+[node name="Main" type="Node2D"]
+
+[node name="A (Vert) layer 1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A (Vert) layer 1"]
+position = Vector2(500, 174.5)
+shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="ColorRect" type="ColorRect" parent="A (Vert) layer 1"]
+offset_left = 481.0
+offset_top = 64.0
+offset_right = 521.0
+offset_bottom = 283.0
+color = Color(7.797182e-06, 0.7012839, 0.34366918, 1)
+
+[node name="B (Bleu) layer 2" type="StaticBody2D" parent="."]
+position = Vector2(250, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B (Bleu) layer 2"]
+position = Vector2(500, 174.5)
+shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="ColorRect" type="ColorRect" parent="B (Bleu) layer 2"]
+offset_left = 481.0
+offset_top = 64.0
+offset_right = 521.0
+offset_bottom = 283.0
+color = Color(0.31030303, 0.6181719, 0.8290969, 1)
+
+[node name="C (Rouge) layer 3" type="StaticBody2D" parent="."]
+position = Vector2(500, 0)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C (Rouge) layer 3"]
+position = Vector2(500, 174.5)
+shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="ColorRect" type="ColorRect" parent="C (Rouge) layer 3"]
+offset_left = 481.0
+offset_top = 64.0
+offset_right = 521.0
+offset_bottom = 283.0
+color = Color(0.9198353, 0.3692203, 0.5143677, 1)
+
+[node name="Player1 (layer 4)" parent="." instance=ExtResource("1_elqb8")]
+
+[node name="Player2 (layer 5)" parent="." instance=ExtResource("1_elqb8")]
+role = "Player2"

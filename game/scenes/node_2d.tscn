@@ -127,6 +127,8 @@ shape = SubResource("RectangleShape2D_04qyp")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="SplitScreen2D/TileMapLayer/Level" groups=["B"]]
 visibility_layer = 63
+collision_layer = 18
+collision_mask = 18
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D2"]
 visibility_layer = 18
@@ -141,6 +143,8 @@ shape = SubResource("RectangleShape2D_04qyp")
 [node name="StaticBody2D3" type="StaticBody2D" parent="SplitScreen2D/TileMapLayer/Level" groups=["C"]]
 visibility_layer = 63
 position = Vector2(32, -19)
+collision_layer = 36
+collision_mask = 36
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D3"]
 visibility_layer = 0
@@ -155,6 +159,8 @@ shape = SubResource("RectangleShape2D_04qyp")
 [node name="player1" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 9
 position = Vector2(-81, -23)
+collision_layer = 18
+collision_mask = 18
 script = ExtResource("2_04qyp")
 role = "Player1"
 
@@ -170,6 +176,8 @@ shape = SubResource("RectangleShape2D_hh0fu")
 [node name="player2" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 9
 position = Vector2(110, -25)
+collision_layer = 18
+collision_mask = 18
 script = ExtResource("2_04qyp")
 role = "Player2"
 

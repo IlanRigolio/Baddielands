@@ -511,27 +511,51 @@ func switch_dim(player: Player):
 				player.current_dim = "A"
 				player.collision_layer = 9
 				player.collision_mask = 9
+				var other_player: Player = player.get_node("../player2")
+				if other_player.current_dim == "B":
+					other_player.visibility_layer = 16
+					other_player.get_node("Sprite2D").visibility_layer = 16
 				player.visibility_layer = 1
 				sprite.visibility_layer = 1
 			else:
 				player.current_dim = "B"
-				player.collision_layer = 18
-				player.collision_mask = 18
-				player.visibility_layer = 18
-				sprite.visibility_layer = 18
+				var new_layer
+				var other_player = player.get_node("../player2")
+				if other_player.current_dim == "B":
+					new_layer = 18
+					other_player.visibility_layer = 18
+					other_player.get_node("Sprite2D").visibility_layer = 18
+				else:
+					new_layer = 2
+				player.collision_layer = new_layer
+				player.collision_mask = new_layer
+				player.visibility_layer = new_layer
+				sprite.visibility_layer = new_layer
 		"Player2":
 			if player.current_dim == "B":
 				player.current_dim = "C"
 				player.collision_layer = 36
 				player.collision_mask = 36
+				var other_player: Player = player.get_node("../player1")
+				if other_player.current_dim == "B":
+					other_player.visibility_layer = 2
+					other_player.get_node("Sprite2D").visibility_layer = 2
 				player.visibility_layer = 32
 				sprite.visibility_layer = 32
 			else:
 				player.current_dim = "B"
-				player.collision_layer = 18
-				player.collision_mask = 18
-				player.visibility_layer = 18
-				sprite.visibility_layer = 18
+				var new_layer
+				var other_player = player.get_node("../player1")
+				if other_player.current_dim == "B":
+					new_layer = 18
+					other_player.visibility_layer = 18
+					other_player.get_node("Sprite2D").visibility_layer = 18
+				else:
+					new_layer = 16
+				player.collision_layer = new_layer
+				player.collision_mask = new_layer
+				player.visibility_layer = new_layer
+				sprite.visibility_layer = new_layer
 	switch_objects_dim(player, player.current_dim)
 	print("Switched " + player.role + " to " + player.current_dim)
 

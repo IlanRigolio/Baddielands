@@ -120,6 +120,12 @@ func _ready() -> void:
 	_auto_detect_player_nodes()
 	_build()
 	_connect_signals()
+	
+	print(viewports)
+	var player1VP:SubViewport = viewports[0]
+	var player2VP:SubViewport = viewports[1]
+	player1VP.canvas_cull_mask = 7
+	player2VP.canvas_cull_mask = 56
 
 
 ## Create a new `SplitScreen2D` instance from a `SplitScreen2DConfig` object. This is a static
@@ -477,3 +483,56 @@ func _safe_reparent(node: Node, new_parent: Node) -> void:
 		node.reparent(new_parent)
 	else:
 		new_parent.add_child(node)
+
+#dimension stuff
+
+var dimensions = {
+	"A": {
+		"Player1": 1,
+		"Player2": 8
+	},
+	"B": {
+		"Player1": 2,
+		"Player2": 16
+	},
+	"C": {
+		"Player1": 4,
+		"Player2": 32
+	}
+}
+@onready var level: Node = get_tree().root.get_node("Node2D").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Level")
+
+func switch_dim(player: Player):
+	print("Switching " + player.role + " from " + player.current_dim)
+	match player.role:
+		"Player1":
+			if player.current_dim == "B":
+				player.current_dim = "A"
+			else:
+				player.current_dim = "B"
+		"Player2":
+			if player.current_dim == "B":
+				player.current_dim = "C"
+			else:
+				player.current_dim = "B"
+	switch_objects_dim(player, player.current_dim)
+	print("Switched " + player.role + " to " + player.current_dim)
+
+func switch_objects_dim(player: Player, dim_to_display: String):
+	var player_total_mask = 7 if player.role == "Player1" else 56
+	
+	var bit_to_add = dimensions[dim_to_display][player.role]
+
+	for obj: Node2D in level.get_children():
+		var sprite = obj.get_node_or_null("Sprite2D")
+		
+		if not sprite:
+			continue
+			
+		sprite.visibility_layer &= ~player_total_mask
+		
+		if obj.is_in_group(dim_to_display):
+			sprite.visibility_layer |= bit_to_add
+		print(obj.name + " : " + str(sprite.visibility_layer))
+		for cam in viewports:
+			print(cam.canvas_cull_mask)

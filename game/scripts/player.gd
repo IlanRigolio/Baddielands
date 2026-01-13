@@ -4,20 +4,48 @@ class_name Player
 const SPEED = 300.0
 
 signal switch_dim(player: Player)
+var current_dim = "B"
+@export_enum("Player1", "Player2") var role: String
 
-enum Dimension {A, B, C}
+var controls = {
+	"Player1":
+		{
+			"up": "ui_up",
+			"down": "ui_down",
+			"right": "ui_right",
+			"left": "ui_left",
+			"switch": "ui_switch"
+		},
+	"Player2":
+		{
+			"up": "ui_up2",
+			"down": "ui_down2",
+			"right": "ui_right2",
+			"left": "ui_left2",
+			"switch": "ui_switch2"
+		}
+}
 
-@export var unique_dimension: Dimension
-@export var common_dimension: Dimension
+func _ready() -> void:
+	var splitscreen: SplitScreen2D = get_tree().current_scene.get_node("SplitScreen2D")
+	connect("switch_dim", splitscreen.switch_dim)
 
 func _physics_process(_delta: float) -> void:
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	var direction_x := Input.get_axis(controls.get(role).get("left"), controls.get(role).get("right"))
+	var direction_y := Input.get_axis(controls.get(role).get("up"), controls.get(role).get("down"))
+	if direction_x:
+		velocity.x = direction_x * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if direction_y:
+		velocity.y = direction_y * SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	if Input.is_action_just_pressed(controls.get(role).get("switch")):
+		swicth_dim()
 
 	move_and_slide()
 
 func swicth_dim():
-	emit_signal("switch_dim", [self])
+	emit_signal("switch_dim", self)

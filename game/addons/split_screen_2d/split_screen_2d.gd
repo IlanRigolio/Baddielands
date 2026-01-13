@@ -504,6 +504,9 @@ var dimensions = {
 
 func switch_dim(player: Player):
 	var sprite = player.get_node("Sprite2D")
+	var son = player.get_node("AudioStreamPlayer") 
+	son.pitch_scale = randf_range(0.9, 1.1)
+	son.play()
 	print("Switching " + player.role + " from " + player.current_dim)
 	match player.role:
 		"Player1":

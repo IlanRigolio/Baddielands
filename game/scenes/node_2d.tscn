@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=11 format=4 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://hst4xu3tv5o1" path="res://scripts/player.gd" id="2_04qyp"]
 [ext_resource type="Texture2D" uid="uid://wy0a7y53rg60" path="res://assets/Skeleton/Backsheets/Death animation.png" id="2_j7wrs"]
 [ext_resource type="Texture2D" uid="uid://e82prtb53he6" path="res://assets/Skeleton/Front sheets/Idle animation.png" id="3_j7wrs"]
 [ext_resource type="Texture2D" uid="uid://ba3yl40rhsadq" path="res://assets/Tileset/tileset-export.png" id="5_04qyp"]
+[ext_resource type="AudioStream" uid="uid://cmvhml5d84hu1" path="res://assets/anotherdimensionanotherdimension.mp3" id="6_j7wrs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7wrs"]
 texture = ExtResource("5_04qyp")
@@ -172,6 +173,9 @@ hframes = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/player1"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_hh0fu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SplitScreen2D/player1"]
+stream = ExtResource("6_j7wrs")
 
 [node name="player2" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 9

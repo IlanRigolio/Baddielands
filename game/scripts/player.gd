@@ -60,11 +60,13 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func swicth_dim():
+	show_message("Vous changez de dimension !")
 	emit_signal("switch_dim", self)
 	
 func pickup_key(key_id: String):
 	inventory.append(key_id)
-	print(role + " a récupéré la clef " + key_id)
+	print(role + " a ramassé : " + key_id)
+	show_message("Vous avez ramassé :\n" + "[color=yellow]" + key_id + "[/color]")
 
 func has_key(key_id: String) -> bool:
 	return key_id in inventory
@@ -81,7 +83,8 @@ func drop_last_key():
 	var split = get_tree().current_scene.find_child("SplitScreen2D", true, false)
 	if not split:
 		return
-	var key_dropped = inventory.pop_back()
+	var key_dropped = inventory[-1]
+	use_key(key_dropped)
 	var new_key = clef_scene.instantiate()
 	new_key.key_id = key_dropped
 	new_key.dim = current_dim
@@ -92,6 +95,22 @@ func drop_last_key():
 	new_key.set_as_top_level(true)
 	new_key.global_position = global_position + Vector2(0, 30) # Il faut mettre la clef plus bas sinon on la recupère instant
 	print(role + " a jeté : " + key_dropped + " en Dim " + current_dim)
+	show_message("Vous avez jeté :\n" + "[color=yellow]" + key_dropped + "[/color]")
 	# pour gerer la visibilité ça marchait pas godot chargeait pas la clef alors je freeze
 	await get_tree().process_frame
 	split.update_objects_visibility(self)
+
+@export var dialog_scene: PackedScene
+
+func show_message(text: String):
+	var split = get_tree().current_scene.find_child("SplitScreen2D", true, false)
+	var my_camera = split.get_player_camera(self)
+	var box = dialog_scene.instantiate()
+	var panel = box.get_node("PanelContainer")
+	my_camera.get_parent().add_child(box)
+	panel.visibility_layer = 3
+	panel.get_node("MarginContainer").visibility_layer = 3
+	panel.get_node("MarginContainer/RichTextLabel").visibility_layer = 3
+	panel.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+	panel.position.y -= 20
+	box.show_message(text)

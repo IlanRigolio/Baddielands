@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=15 format=4 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3068m2lmwhqe" path="res://scenes/pizza_part.tscn" id="5_hh0fu"]
 [ext_resource type="PackedScene" uid="uid://yda71n84sshf" path="res://scenes/clef.tscn" id="6_3m5ht"]
 [ext_resource type="AudioStream" uid="uid://cmvhml5d84hu1" path="res://assets/anotherdimensionanotherdimension.mp3" id="6_j7wrs"]
+[ext_resource type="PackedScene" uid="uid://dpawya7hcv54u" path="res://scenes/DialogueBox.tscn" id="8_dubn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7wrs"]
 texture = ExtResource("5_04qyp")
@@ -243,6 +244,7 @@ collision_mask = 2
 script = ExtResource("2_04qyp")
 role = "Player1"
 clef_scene = ExtResource("6_3m5ht")
+dialog_scene = ExtResource("8_dubn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/player1"]
 visibility_layer = 3
@@ -264,6 +266,7 @@ collision_mask = 18
 script = ExtResource("2_04qyp")
 role = "Player2"
 clef_scene = ExtResource("6_3m5ht")
+dialog_scene = ExtResource("8_dubn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/player2"]
 visibility_layer = 3

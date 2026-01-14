@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=16 format=4 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ba3yl40rhsadq" path="res://assets/Tileset/tileset-export.png" id="5_04qyp"]
 [ext_resource type="PackedScene" uid="uid://b3068m2lmwhqe" path="res://scenes/pizza_part.tscn" id="5_hh0fu"]
 [ext_resource type="PackedScene" uid="uid://yda71n84sshf" path="res://scenes/clef.tscn" id="6_3m5ht"]
+[ext_resource type="PackedScene" uid="uid://6q5y0qrvylao" path="res://scenes/coffre.tscn" id="7_08kqv"]
 [ext_resource type="PackedScene" uid="uid://dpawya7hcv54u" path="res://scenes/DialogueBox.tscn" id="8_dubn7"]
 [ext_resource type="AudioStream" uid="uid://cl6jwboc6q207" path="res://assets/Transition.mp3" id="10_dubn7"]
 
@@ -235,6 +236,10 @@ position = Vector2(-97.6, 80.92)
 scale = Vector2(-0.695, -0.695)
 dim = "C"
 key_id = "clef_4"
+
+[node name="Coffre" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("7_08kqv")]
+position = Vector2(156.45, -83.15)
+scale = Vector2(0.33, 0.33)
 
 [node name="player1" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3

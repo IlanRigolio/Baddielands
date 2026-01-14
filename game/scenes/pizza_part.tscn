@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct6i5o43vtqlf"]
+[gd_scene load_steps=4 format=3 uid="uid://b3068m2lmwhqe"]
 
-[ext_resource type="Script" uid="uid://d0equb8mwff4" path="res://scripts/pizza.gd" id="1_jt15y"]
+[ext_resource type="Script" path="res://scripts/pizza.gd" id="1_jt15y"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m7hx8"]
 

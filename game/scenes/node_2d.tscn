@@ -193,3 +193,6 @@ hframes = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/player2"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_hh0fu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SplitScreen2D/player2"]
+stream = ExtResource("6_j7wrs")

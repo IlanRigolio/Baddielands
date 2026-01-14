@@ -500,7 +500,7 @@ var dimensions = {
 		"Player2": 32
 	}
 }
-@onready var level: Node = get_tree().root.get_node("Node2D").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Level")
+@onready var level: Node = get_tree().root.get_node("Game").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Level")
 
 func switch_dim(player: Player):
 	var sprite = player.get_node("Sprite2D")

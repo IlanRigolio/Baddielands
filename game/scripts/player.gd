@@ -4,6 +4,8 @@ class_name Player
 const SPEED = 300.0
 
 signal switch_dim(player: Player)
+signal picked_up_pizza
+
 var current_dim = "B"
 @export_enum("Player1", "Player2") var role: String
 
@@ -29,6 +31,9 @@ var controls = {
 func _ready() -> void:
 	var splitscreen: SplitScreen2D = get_tree().current_scene.get_node("SplitScreen2D")
 	connect("switch_dim", splitscreen.switch_dim)
+	
+	var game_master: GameMaster = get_tree().current_scene
+	connect("picked_up_pizza", game_master.picked_up_pizza)
 
 func _physics_process(_delta: float) -> void:
 	var direction_x := Input.get_axis(controls.get(role).get("left"), controls.get(role).get("right"))

@@ -26,6 +26,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.pickup_key(key_id)
-		print("Clef ramassée : " + key_id)
-		queue_free()
+		var succes = body.pickup_key(key_id)
+		if succes:
+			print("Clef ramassée : " + key_id)
+			queue_free()

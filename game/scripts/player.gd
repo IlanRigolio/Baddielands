@@ -55,18 +55,24 @@ func _physics_process(_delta: float) -> void:
 		swicth_dim()
 		
 	if Input.is_action_just_pressed(controls.get(role).get("drop")):
-		drop_last_key()
+		drop_key()
 
 	move_and_slide()
 
 func swicth_dim():
 	show_message("Vous changez de dimension !")
 	emit_signal("switch_dim", self)
-	
-func pickup_key(key_id: String):
-	inventory.append(key_id)
-	print(role + " a ramassé : " + key_id)
-	show_message("Vous avez ramassé :\n" + "[color=yellow]" + key_id + "[/color]")
+
+func pickup_key(key_id: String)->bool:
+	if inventory.size() >= 1:
+		var key_inventory = inventory[0]
+		show_message("Vous portez déjà : " + "[color=yellow]" + key_inventory + "[/color]" + " ! Impossible de récupérer " + "[color=yellow]" + key_id + "[/color]")
+		return false
+	else:
+		inventory.append(key_id)
+		print(role + " a ramassé : " + key_id)
+		show_message("Vous avez ramassé :\n" + "[color=yellow]" + key_id + "[/color]")
+		return true
 
 func has_key(key_id: String) -> bool:
 	return key_id in inventory
@@ -75,7 +81,7 @@ func use_key(key_id: String):
 	if has_key(key_id):
 		inventory.erase(key_id)
 		
-func drop_last_key():
+func drop_key():
 	if inventory.is_empty():
 		return
 	if clef_scene == null: 

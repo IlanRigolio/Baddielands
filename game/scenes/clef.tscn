@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://yda71n84sshf"]
+
+[ext_resource type="Script" uid="uid://c6asxa8ddotyn" path="res://scripts/clef.gd" id="1_q4fw2"]
+[ext_resource type="Texture2D" uid="uid://dan0jsd25q7u4" path="res://icon.svg" id="2_7nosy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nosy"]
+radius = 16.124516
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_q4fw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.165, 0.165)
+texture = ExtResource("2_7nosy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7nosy")

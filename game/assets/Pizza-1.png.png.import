@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cma5vo6v3k3d5"
-path="res://.godot/imported/Wooden Chest 3 - frame  04.png-9889d2165f9049f555a58fffadccd749.ctex"
+uid="uid://ihcox804546r"
+path="res://.godot/imported/Pizza-1.png.png-1066f2fd6714ce8949f6f3c58e5ff474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/coffre/Wooden Chest 3 - frame  04.png"
-dest_files=["res://.godot/imported/Wooden Chest 3 - frame  04.png-9889d2165f9049f555a58fffadccd749.ctex"]
+source_file="res://assets/Pizza-1.png.png"
+dest_files=["res://.godot/imported/Pizza-1.png.png-1066f2fd6714ce8949f6f3c58e5ff474.ctex"]
 
 [params]
 

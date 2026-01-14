@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bimp86mwq5bey"
-path="res://.godot/imported/Wooden Chest 3 - frame  00.png-751ba45eaf755dc695ff965b97763bc4.ctex"
+uid="uid://dsw3jqxmvhk33"
+path="res://.godot/imported/clef_verte.png-274cf7e1b904aa10dd7c86e734fc3d3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/coffre/Wooden Chest 3 - frame  00.png"
-dest_files=["res://.godot/imported/Wooden Chest 3 - frame  00.png-751ba45eaf755dc695ff965b97763bc4.ctex"]
+source_file="res://assets/coffre/clef_verte.png"
+dest_files=["res://.godot/imported/clef_verte.png-274cf7e1b904aa10dd7c86e734fc3d3e.ctex"]
 
 [params]
 

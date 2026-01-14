@@ -238,8 +238,9 @@ dim = "C"
 key_id = "clef_4"
 
 [node name="Coffre" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("7_08kqv")]
-position = Vector2(156.45, -83.15)
+position = Vector2(156.00002, -83)
 scale = Vector2(0.33, 0.33)
+dim = "C"
 
 [node name="player1" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3

@@ -120,3 +120,7 @@ func show_message(text: String):
 	panel.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	panel.position.y -= 20
 	box.show_message(text)
+
+
+	
+	

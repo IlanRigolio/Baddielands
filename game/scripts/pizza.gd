@@ -6,14 +6,20 @@ class_name Pizza
 func _ready() -> void:
 	match dim:
 		"A":
-			collision_layer = 9
-			collision_mask = 9
+			add_to_group("A")
+			collision_layer = 1
+			collision_mask = 1
+			modulate = Color(1, 0, 0, 1)
 		"B":
-			collision_layer = 18
-			collision_mask = 18
+			add_to_group("B")
+			collision_layer = 2
+			collision_mask = 2
+			modulate = Color(0, 1, 0, 1)
 		"C":
-			collision_layer = 36
-			collision_mask = 36
+			add_to_group("C")
+			collision_layer = 4
+			collision_mask = 4
+			modulate = Color(0, 0, 1, 1)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

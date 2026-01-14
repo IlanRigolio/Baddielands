@@ -121,11 +121,6 @@ func _ready() -> void:
 	_build()
 	_connect_signals()
 	
-	print(viewports)
-	var player1VP:SubViewport = viewports[0]
-	var player2VP:SubViewport = viewports[1]
-	player1VP.canvas_cull_mask = 7
-	player2VP.canvas_cull_mask = 56
 
 
 ## Create a new `SplitScreen2D` instance from a `SplitScreen2DConfig` object. This is a static
@@ -406,6 +401,12 @@ func _build_viewport(size: Vector2 = screen_size) -> SubViewportContainer:
 	viewport.set_size(size)
 	viewport.set_update_mode(SubViewport.UPDATE_ALWAYS)
 	viewport.set_transparent_background(transparent_background)
+	
+	var viewport_index = viewports.size() 
+	if viewport_index == 0:
+		viewport.canvas_cull_mask = 1
+	elif viewport_index == 1:
+		viewport.canvas_cull_mask = 2
 
 	# Allow the viewport to receive input events.
 	viewport.set_handle_input_locally(false)
@@ -484,99 +485,95 @@ func _safe_reparent(node: Node, new_parent: Node) -> void:
 	else:
 		new_parent.add_child(node)
 
-#dimension stuff
-
-var dimensions = {
-	"A": {
-		"Player1": 1,
-		"Player2": 8
-	},
-	"B": {
-		"Player1": 2,
-		"Player2": 16
-	},
-	"C": {
-		"Player1": 4,
-		"Player2": 32
-	}
-}
 @onready var level: Node = get_tree().root.get_node("Game").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Level")
 
 func switch_dim(player: Player):
-	var sprite = player.get_node("Sprite2D")
 	var son = player.get_node("AudioStreamPlayer") 
 	son.pitch_scale = randf_range(0.9, 1.1)
 	son.play()
-	print("Switching " + player.role + " from " + player.current_dim)
+	print(viewports[0].canvas_cull_mask)
+	print(viewports[1].canvas_cull_mask)
 	match player.role:
 		"Player1":
-			if player.current_dim == "B":
-				player.current_dim = "A"
-				player.collision_layer = 9
-				player.collision_mask = 9
-				var other_player: Player = player.get_node("../player2")
-				if other_player.current_dim == "B":
-					other_player.visibility_layer = 16
-					other_player.get_node("Sprite2D").visibility_layer = 16
-				player.visibility_layer = 1
-				sprite.visibility_layer = 1
-			else:
+			if player.current_dim == "A":
 				player.current_dim = "B"
-				var new_layer
+				#visibility
 				var other_player = player.get_node("../player2")
 				if other_player.current_dim == "B":
-					new_layer = 18
-					other_player.visibility_layer = 18
-					other_player.get_node("Sprite2D").visibility_layer = 18
-				else:
-					new_layer = 2
-				player.collision_layer = new_layer
-				player.collision_mask = new_layer
-				player.visibility_layer = new_layer
-				sprite.visibility_layer = new_layer
-		"Player2":
-			if player.current_dim == "B":
-				player.current_dim = "C"
-				player.collision_layer = 36
-				player.collision_mask = 36
-				var other_player: Player = player.get_node("../player1")
+					player.visibility_layer = 3
+					player.get_node("Sprite2D").visibility_layer = 3
+					other_player.visibility_layer = 3
+					other_player.get_node("Sprite2D").visibility_layer = 3
+				#collision
+				player.collision_layer = 2
+				player.collision_mask = 2
+			else:
+				player.current_dim = "A"
+				player.visibility_layer = 1
+				player.get_node("Sprite2D").visibility_layer = 1
+				var other_player = player.get_node("../player2")
 				if other_player.current_dim == "B":
 					other_player.visibility_layer = 2
 					other_player.get_node("Sprite2D").visibility_layer = 2
-				player.visibility_layer = 32
-				sprite.visibility_layer = 32
-			else:
+				#collision
+				player.collision_layer = 1
+				player.collision_mask = 1
+		"Player2":
+			if player.current_dim == "C":
 				player.current_dim = "B"
-				var new_layer
+				#visibility
 				var other_player = player.get_node("../player1")
 				if other_player.current_dim == "B":
-					new_layer = 18
-					other_player.visibility_layer = 18
-					other_player.get_node("Sprite2D").visibility_layer = 18
+					player.visibility_layer = 3
+					player.get_node("Sprite2D").visibility_layer = 3
+					other_player.visibility_layer = 3
+					other_player.get_node("Sprite2D").visibility_layer = 3
+				#collision
+				player.collision_layer = 2
+				player.collision_mask = 2
+			else:
+				player.current_dim = "C"
+				player.visibility_layer = 2
+				player.get_node("Sprite2D").visibility_layer = 2
+				var other_player = player.get_node("../player1")
+				if other_player.current_dim == "B":
+					other_player.visibility_layer = 1
+					other_player.get_node("Sprite2D").visibility_layer = 1
+				#collision
+				player.collision_layer = 4
+				player.collision_mask = 4
+	update_objects_visibility(player)
+
+func update_objects_visibility(player: Player):
+	var player1 = player.get_node("../player1")
+	var player2 = player.get_node("../player2")
+	var objects = level.get_children()
+	for obj: Node in objects:
+		if obj.is_in_group("A"):
+			if player1.current_dim == "A":
+				obj.visibility_layer = 1
+				obj.get_node("Sprite2D").visibility_layer = 1
+			else:
+				obj.visibility_layer = 0
+				obj.get_node("Sprite2D").visibility_layer = 0
+		elif obj.is_in_group("B"):
+			if player1.current_dim == "B":
+				if player2.current_dim == "B":
+					obj.visibility_layer = 3
+					obj.get_node("Sprite2D").visibility_layer = 3
 				else:
-					new_layer = 16
-				player.collision_layer = new_layer
-				player.collision_mask = new_layer
-				player.visibility_layer = new_layer
-				sprite.visibility_layer = new_layer
-	switch_objects_dim(player, player.current_dim)
-	print("Switched " + player.role + " to " + player.current_dim)
-
-func switch_objects_dim(player: Player, dim_to_display: String):
-	var player_total_mask = 7 if player.role == "Player1" else 56
-	
-	var bit_to_add = dimensions[dim_to_display][player.role]
-
-	for obj: Node2D in level.get_children():
-		var sprite = obj.get_node_or_null("Sprite2D")
-		
-		if not sprite:
-			continue
-			
-		sprite.visibility_layer &= ~player_total_mask
-		
-		if obj.is_in_group(dim_to_display):
-			sprite.visibility_layer |= bit_to_add
-		print(obj.name + " : " + str(sprite.visibility_layer))
-		for cam in viewports:
-			print(cam.canvas_cull_mask)
+					obj.visibility_layer = 1
+					obj.get_node("Sprite2D").visibility_layer = 1
+			elif player2.current_dim == "B":
+				obj.visibility_layer = 2
+				obj.get_node("Sprite2D").visibility_layer = 2
+			else:
+				obj.visibility_layer = 0
+				obj.get_node("Sprite2D").visibility_layer = 0
+		elif obj.is_in_group("C"):
+			if player2.current_dim == "C":
+				obj.visibility_layer = 2
+				obj.get_node("Sprite2D").visibility_layer = 2
+			else:
+				obj.visibility_layer = 0
+				obj.get_node("Sprite2D").visibility_layer = 0

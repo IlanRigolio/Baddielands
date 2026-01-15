@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://6q5y0qrvylao"]
+[gd_scene load_steps=4 format=3 uid="uid://11mk0mjb684e"]
 
-[ext_resource type="Texture2D" uid="uid://bimp86mwq5bey" path="res://assets/coffre/Wooden Chest 3 - frame  00.png" id="1_2xvtn"]
 [ext_resource type="Script" uid="uid://d2wi7n76bs6fx" path="res://scripts/coffre.gd" id="1_3wl40"]
+[ext_resource type="Texture2D" uid="uid://ihcox804546r" path="res://assets/Pizza-1.png.png" id="3_m0kht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wl40"]
 radius = 34.0147
@@ -12,7 +12,11 @@ script = ExtResource("1_3wl40")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
 scale = Vector2(1.34, 1.34)
-texture = ExtResource("1_2xvtn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3wl40")
+
+[node name="SpritePizza" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.005, 0.005)
+texture = ExtResource("3_m0kht")

@@ -32,6 +32,8 @@ var controls = {
 		}
 }
 
+@onready var animation: AnimationPlayer = get_node("AnimationPlayer")
+
 func _ready() -> void:
 	var splitscreen: SplitScreen2D = get_tree().current_scene.get_node("SplitScreen2D")
 	connect("switch_dim", splitscreen.switch_dim)
@@ -56,7 +58,8 @@ func _physics_process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed(controls.get(role).get("drop")):
 		drop_key()
-
+	
+	update_animation()
 	move_and_slide()
 
 func swicth_dim():
@@ -120,3 +123,30 @@ func show_message(text: String):
 	panel.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	panel.position.y -= 20
 	box.show_message(text)
+
+func update_animation():
+	if velocity.length() == 0:
+		animation.pause()
+		return
+	if role == "Player1":
+		if abs(velocity.x) > abs(velocity.y):
+			if velocity.x > 0:
+				play_anim("right")
+			else:
+				play_anim("left")
+		else:
+			if velocity.y > 0:
+				play_anim("down")
+			else:
+				play_anim("up")
+	else:
+		if velocity.y > 0:
+			play_anim("down")
+		elif velocity.y < 0:
+			play_anim("up")
+		if animation.current_animation != "down" and animation.current_animation != "up":
+			play_anim("down")
+
+func play_anim(animation_name: String):
+	if animation.has_animation(animation_name):
+		animation.play(animation_name)

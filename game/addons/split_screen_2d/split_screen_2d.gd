@@ -486,6 +486,7 @@ func _safe_reparent(node: Node, new_parent: Node) -> void:
 		new_parent.add_child(node)
 
 @onready var level: Node = get_tree().root.get_node("Game").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Level")
+@onready var maps_node: Node = get_tree().root.get_node("Game").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Maps")
 
 func switch_dim(player: Player):
 	var son = player.get_node("AudioStreamPlayer") 
@@ -545,35 +546,30 @@ func switch_dim(player: Player):
 	update_objects_visibility(player)
 
 func update_objects_visibility(player: Player):
-	var player1 = player.get_node("../player1")
-	var player2 = player.get_node("../player2")
+	var player1: Player = player.get_node("../player1")
+	var player2: Player = player.get_node("../player2")
 	var objects = level.get_children()
+	var maps = maps_node.get_children()
 	for obj: Node in objects:
-		if obj.is_in_group("A"):
-			if player1.current_dim == "A":
-				obj.visibility_layer = 1
-				obj.get_node("Sprite2D").visibility_layer = 1
-			else:
-				obj.visibility_layer = 0
-				obj.get_node("Sprite2D").visibility_layer = 0
-		elif obj.is_in_group("B"):
-			if player1.current_dim == "B":
-				if player2.current_dim == "B":
-					obj.visibility_layer = 3
-					obj.get_node("Sprite2D").visibility_layer = 3
-				else:
-					obj.visibility_layer = 1
-					obj.get_node("Sprite2D").visibility_layer = 1
-			elif player2.current_dim == "B":
-				obj.visibility_layer = 2
-				obj.get_node("Sprite2D").visibility_layer = 2
-			else:
-				obj.visibility_layer = 0
-				obj.get_node("Sprite2D").visibility_layer = 0
-		elif obj.is_in_group("C"):
-			if player2.current_dim == "C":
-				obj.visibility_layer = 2
-				obj.get_node("Sprite2D").visibility_layer = 2
-			else:
-				obj.visibility_layer = 0
-				obj.get_node("Sprite2D").visibility_layer = 0
+		if obj.is_in_group(player1.current_dim):
+			obj.visibility_layer |= 1
+			obj.get_node("Sprite2D").visibility_layer |= 1
+		else:
+			obj.visibility_layer &= ~1
+			obj.get_node("Sprite2D").visibility_layer &= ~1
+		if obj.is_in_group(player2.current_dim):
+			obj.visibility_layer |= 2
+			obj.get_node("Sprite2D").visibility_layer |= 2
+		else:
+			obj.visibility_layer &= ~2
+			obj.get_node("Sprite2D").visibility_layer &= ~2
+	
+	for map: TileMapLayer in maps:
+		if map.is_in_group(player1.current_dim):
+			map.visibility_layer |= 1
+		else:
+			map.visibility_layer &= ~1
+		if map.is_in_group(player2.current_dim):
+			map.visibility_layer |= 2
+		else:
+			map.visibility_layer &= ~2

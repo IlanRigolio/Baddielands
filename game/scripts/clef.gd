@@ -3,8 +3,8 @@ class_name Clef
 
 @export_enum("A", "B", "C") var dim: String = "A"
 @export var key_id: String = "clef_1"
-const clef_A = "res://assets/coffre/clef_rouge.png"
-const clef_B = "res://assets/coffre/clef_bleue.png"
+const clef_A = "res://assets/coffre/clef_verte.png"
+const clef_B = "res://assets/coffre/clef_verte.png"
 const clef_C = "res://assets/coffre/clef_verte.png"
 
 func _ready() -> void:

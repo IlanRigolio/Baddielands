@@ -4,7 +4,7 @@ extends Area2D
 @export var key_id: String = "clef_1"
 @onready var sprite_pizza = $SpritePizza
 
-const ferme_A = "res://assets/coffre/coffre_rouge.png"
+const ferme_A = "res://assets/coffre/clef_verte.png"
 const ouvert_A = "res://assets/coffre/coffre_rouge_ouvert.png"
 const ferme_C = "res://assets/coffre/coffre_vert.png"
 const ouvert_C = "res://assets/coffre/coffre_vert_ouvert.png"

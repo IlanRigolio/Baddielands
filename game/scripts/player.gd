@@ -102,7 +102,7 @@ func drop_key():
 	else:
 		get_parent().add_child(new_key)
 	new_key.set_as_top_level(true)
-	new_key.global_position = global_position + Vector2(0, 30) # Il faut mettre la clef plus bas sinon on la recupère instant
+	new_key.global_position = global_position + Vector2(0, 70) # Il faut mettre la clef plus bas sinon on la recupère instant
 	print(role + " a jeté : " + key_dropped + " en Dim " + current_dim)
 	show_message("Vous avez jeté :\n" + "[color=yellow]" + key_dropped + "[/color]")
 	# pour gerer la visibilité ça marchait pas godot chargeait pas la clef alors je freeze

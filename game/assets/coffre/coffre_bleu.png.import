@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brm11c3qmfyv"
-path="res://.godot/imported/clef_verte.png-274cf7e1b904aa10dd7c86e734fc3d3e.ctex"
+uid="uid://cqceu8mrit0m2"
+path="res://.godot/imported/coffre_bleu.png-b55d7d9558470ea57ce6709f80dae878.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/coffre/clef_verte.png"
-dest_files=["res://.godot/imported/clef_verte.png-274cf7e1b904aa10dd7c86e734fc3d3e.ctex"]
+source_file="res://assets/coffre/coffre_bleu.png"
+dest_files=["res://.godot/imported/coffre_bleu.png-b55d7d9558470ea57ce6709f80dae878.ctex"]
 
 [params]
 

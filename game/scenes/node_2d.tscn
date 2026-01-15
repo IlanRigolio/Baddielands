@@ -8,7 +8,7 @@
 [ext_resource type="TileSet" uid="uid://pls3ph4o8bvu" path="res://resources/tile_map_layer_collision.tres" id="4_x63s8"]
 [ext_resource type="PackedScene" uid="uid://cg5f3l0aujfoy" path="res://scenes/tile_map_layer_green.tscn" id="5_f6ptj"]
 [ext_resource type="PackedScene" uid="uid://cl8q5nkln5pqa" path="res://scenes/pressure_plate.tscn" id="5_xtx0q"]
-[ext_resource type="PackedScene" uid="uid://6q5y0qrvylao" path="res://scenes/coffre.tscn" id="6_3kg8w"]
+[ext_resource type="PackedScene" uid="uid://11mk0mjb684e" path="res://scenes/coffre.tscn" id="6_3kg8w"]
 [ext_resource type="PackedScene" uid="uid://yda71n84sshf" path="res://scenes/clef.tscn" id="6_3m5ht"]
 [ext_resource type="PackedScene" uid="uid://dsjs43kovul5f" path="res://scenes/tile_map_layer_pink.tscn" id="6_hsdmi"]
 [ext_resource type="Texture2D" uid="uid://bfuw4dus33npe" path="res://assets/Characters/moona.png" id="7_3m5ht"]
@@ -285,9 +285,11 @@ dim = "C"
 
 [node name="Coffre" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3kg8w")]
 position = Vector2(-2380, 732)
+scale = Vector2(1.005, 1.005)
 
 [node name="Area2D" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
 position = Vector2(450, -300)
+scale = Vector2(1.965, 1.965)
 dim = "C"
 
 [node name="Maps" type="Node" parent="SplitScreen2D/TileMapLayer"]

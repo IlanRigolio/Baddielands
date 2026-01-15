@@ -4,10 +4,9 @@ extends Area2D
 @export var key_id: String = "clef_1"
 @onready var sprite_pizza = $SpritePizza
 
-const ferme_A = "res://assets/coffre/clef_verte.png"
-const ouvert_A = "res://assets/coffre/coffre_rouge_ouvert.png"
-const ferme_C = "res://assets/coffre/coffre_vert.png"
-const ouvert_C = "res://assets/coffre/coffre_vert_ouvert.png"
+const ferme_A = "res://assets/coffre/coffre_bleu.png"
+const ferme_C = "res://assets/coffre/coffre_rouge.png"
+const ouvert = "res://assets/coffre/coffre_gris.png"
 
 func _ready() -> void:
 	match dim:
@@ -40,6 +39,7 @@ func _on_body_entered(body: Node2D) -> void:
 			body.use_key(key_id)
 			animer_pizza()
 			set_deferred("monitoring", false)
+			$Sprite2D.texture = load(ouvert)
 			return
 		if body.inventory[0] != self.key_id:
 			body.show_message("Vous n'avez pas la bonne " + "[color=yellow]" + "clef" + "[/color]" + " !")

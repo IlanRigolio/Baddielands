@@ -1,6 +1,41 @@
 # gj4
 
-Ceci est un squelette de dépôt pour votre jeu.
+# Baddielands
+
+**Baddielands** is a local split-screen co-op game made for the Game Jam 4 (Theme: Another Dimension, Another Domension).
+
+## Credits
+* **Creators:** Ilan Rigolio & Charles Thorin
+* **Art Assets:** Lesliana Martin
+* **Audio Assets:** Julien Baetens
+
+## 🍕 Goal
+Work together to collect **Pizza Slices** from locked chests.
+* **Player 1** lives in **Dimension A**.
+* **Player 2** lives in **Dimension C**.
+* **Dimension B** is the meeting point.
+
+Keys found in Dimension A open chests in Dimension C (and vice-versa). You must meet in Dimension B to exchange keys!
+
+## 🎮 Controls
+
+Action: 
+
+Player1 (left):
+
+Move : ZQSD
+Change dimension : E
+Drop key : A
+
+Player2 (right):
+
+Move : ZQSD
+Change dimension : right shift
+Drop Key : P
+
+---
+*Made with Godot.*
+
 
 ## Contenu
 

@@ -4,8 +4,8 @@
 # - LES CHAMPS OBLIGATOIRES SONT INDIQUÉS PAR [!]
 # - NE SUPPRIMEZ PAS LES CHAMPS VIDES laissez par exemple,    abstract: "" 
 # ----------------------------------
-title: ""  # Le titre tel qu'il apparaîtra lors de la présentation
-abstract: "" # Résumé de votre jeu
+title: "Baddielands"  # Le titre tel qu'il apparaîtra lors de la présentation
+abstract: "Un jeu où la coopération est nécessaire pour réunir la sainte pizza éparpillée à travers 3 dimensions..." # Résumé de votre jeu
 team:  "Ubergames"  # Le nom de votre équipe tel qu'il apparaîtra à la présentation
 motto: "" # Le slogan de votre équipe
 members:  # Liste des membres de l'équipe (ajoutez un bloc par membre)
@@ -49,5 +49,5 @@ engine: "Godot" # Moteur de jeu utilisé (exemples : "Pygame" "Phaser" "Godot" "
 credits:
   - audio: "Baetens Julien"                          # Audio
   - graphics: "Martin Lesliana"                       # Graphismes
-  - thanks: "My friends, my family, and Frank Leboeuf" # Remerciements
+  - thanks: "Merci Saluel Hureaux pour les fonds investis dans le projet." # Remerciements
 message: "J'apprécie particulièrement les fraises tagada." # Information ou message à ajouter, et qui ne correspondait à aucun item de ce template

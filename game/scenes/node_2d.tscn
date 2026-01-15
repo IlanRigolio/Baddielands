@@ -1,131 +1,21 @@
-[gd_scene load_steps=16 format=4 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=12 format=3 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
 [ext_resource type="Script" uid="uid://hst4xu3tv5o1" path="res://scripts/player.gd" id="2_04qyp"]
-[ext_resource type="Texture2D" uid="uid://wy0a7y53rg60" path="res://assets/Skeleton/Backsheets/Death animation.png" id="2_j7wrs"]
-[ext_resource type="Texture2D" uid="uid://e82prtb53he6" path="res://assets/Skeleton/Front sheets/Idle animation.png" id="3_j7wrs"]
-[ext_resource type="Texture2D" uid="uid://ba3yl40rhsadq" path="res://assets/Tileset/tileset-export.png" id="5_04qyp"]
-[ext_resource type="PackedScene" uid="uid://b3068m2lmwhqe" path="res://scenes/pizza_part.tscn" id="5_hh0fu"]
+[ext_resource type="PackedScene" uid="uid://dsuoufmxoxqsu" path="res://scenes/tile_map_layer.tscn" id="3_hh0fu"]
 [ext_resource type="PackedScene" uid="uid://yda71n84sshf" path="res://scenes/clef.tscn" id="6_3m5ht"]
-[ext_resource type="PackedScene" uid="uid://6q5y0qrvylao" path="res://scenes/coffre.tscn" id="7_08kqv"]
+[ext_resource type="Texture2D" uid="uid://bfuw4dus33npe" path="res://assets/Characters/moona.png" id="7_3m5ht"]
 [ext_resource type="PackedScene" uid="uid://dpawya7hcv54u" path="res://scenes/DialogueBox.tscn" id="8_dubn7"]
+[ext_resource type="Texture2D" uid="uid://2kdcx786gs21" path="res://assets/Characters/sylvio.png" id="9_dubn7"]
 [ext_resource type="AudioStream" uid="uid://cl6jwboc6q207" path="res://assets/Transition.mp3" id="10_dubn7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7wrs"]
-texture = ExtResource("5_04qyp")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-0:4/0 = 0
-0:4/0/z_index = 1
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:4/0 = 0
-1:4/0/z_index = 1
-2:4/0 = 0
-2:4/0/z_index = 1
-3:4/0 = 0
-3:4/0/z_index = 1
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-0:5/0 = 0
-0:5/0/z_index = 1
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:5/0 = 0
-1:5/0/z_index = 1
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:5/0 = 0
-2:5/0/z_index = 1
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:5/0 = 0
-3:5/0/z_index = 1
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08kqv"]
+radius = 11.0
+height = 59.0
 
-[sub_resource type="TileSet" id="TileSet_fws66"]
-physics_layer_0/collision_layer = 255
-sources/0 = SubResource("TileSetAtlasSource_j7wrs")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_04qyp"]
-size = Vector2(17, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fu"]
-size = Vector2(12, 15)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6ptj"]
+height = 62.0
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_fws66")
@@ -136,115 +26,14 @@ play_area = NodePath("TileMapLayer")
 max_players = 2
 metadata/_custom_type_script = "uid://bpaq3fo7mra4m"
 
-[node name="TileMapLayer" type="TileMapLayer" parent="SplitScreen2D"]
+[node name="TileMapLayer" parent="SplitScreen2D" instance=ExtResource("3_hh0fu")]
 visibility_layer = 3
-tile_map_data = PackedByteArray("AAD0//f/AAACAAYAAAD0//j/AAADAAcAAAD0//n/AAACAAcAAAD0//r/AAABAAYAAAD0//v/AAADAAcAAAD0//z/AAAAAAcAAAD0//3/AAADAAYAAAD0//7/AAABAAcAAAD0////AAACAAYAAAD0/wAAAAAAAAcAAAD0/wEAAAACAAcAAAD0/wIAAAACAAYAAAD0/wMAAAACAAYAAAD0/wQAAAABAAcAAAD0/wUAAAABAAYAAAD0/wYAAAAAAAYAAAD0/wcAAAABAAQAAAD1//f/AAABAAcAAAD1//j/AAABAAcAAAD1//n/AAABAAcAAAD1//r/AAADAAcAAAD1//v/AAAAAAcAAAD1//z/AAABAAYAAAD1//3/AAACAAcAAAD1//7/AAABAAYAAAD1////AAAAAAcAAAD1/wAAAAAAAAcAAAD1/wEAAAAAAAYAAAD1/wIAAAACAAcAAAD1/wMAAAACAAcAAAD1/wQAAAAAAAYAAAD1/wUAAAAAAAcAAAD1/wYAAAADAAYAAAD1/wcAAAACAAQAAAD2//f/AAACAAcAAAD2//j/AAAAAAcAAAD2//n/AAACAAcAAAD2//r/AAABAAYAAAD2//v/AAABAAYAAAD2//z/AAADAAYAAAD2//3/AAAAAAcAAAD2//7/AAADAAYAAAD2////AAABAAYAAAD2/wAAAAACAAcAAAD2/wEAAAAAAAYAAAD2/wIAAAAAAAYAAAD2/wMAAAABAAYAAAD2/wQAAAABAAYAAAD2/wUAAAAAAAcAAAD2/wYAAAABAAcAAAD2/wcAAAABAAQAAAD3//f/AAADAAYAAAD3//j/AAACAAcAAAD3//n/AAACAAcAAAD3//r/AAACAAYAAAD3//v/AAAAAAYAAAD3//z/AAACAAcAAAD3//3/AAABAAcAAAD3//7/AAADAAYAAAD3////AAACAAYAAAD3/wAAAAADAAYAAAD3/wEAAAAAAAcAAAD3/wIAAAABAAYAAAD3/wMAAAABAAcAAAD3/wQAAAADAAcAAAD3/wUAAAABAAYAAAD3/wYAAAAAAAcAAAD3/wcAAAACAAQAAAD4//f/AAADAAcAAAD4//j/AAABAAcAAAD4//n/AAACAAYAAAD4//r/AAAAAAcAAAD4//v/AAAAAAYAAAD4//z/AAABAAcAAAD4//3/AAADAAcAAAD4//7/AAADAAYAAAD4////AAADAAYAAAD4/wAAAAAAAAcAAAD4/wEAAAADAAcAAAD4/wIAAAABAAcAAAD4/wMAAAAAAAYAAAD4/wQAAAADAAYAAAD4/wUAAAABAAcAAAD4/wYAAAABAAYAAAD4/wcAAAABAAQAAAD5//f/AAADAAcAAAD5//j/AAABAAcAAAD5//n/AAACAAcAAAD5//r/AAABAAcAAAD5//v/AAADAAYAAAD5//z/AAACAAYAAAD5//3/AAACAAYAAAD5//7/AAADAAcAAAD5////AAAAAAYAAAD5/wAAAAAAAAcAAAD5/wEAAAAAAAYAAAD5/wIAAAABAAcAAAD5/wMAAAADAAYAAAD5/wQAAAAAAAcAAAD5/wUAAAADAAcAAAD5/wYAAAADAAYAAAD5/wcAAAACAAQAAAD6//f/AAADAAYAAAD6//j/AAADAAcAAAD6//n/AAABAAcAAAD6//r/AAAAAAYAAAD6//v/AAACAAcAAAD6//z/AAAAAAcAAAD6//3/AAABAAcAAAD6//7/AAABAAcAAAD6////AAAAAAYAAAD6/wAAAAABAAYAAAD6/wEAAAABAAcAAAD6/wIAAAACAAcAAAD6/wMAAAABAAYAAAD6/wQAAAADAAcAAAD6/wUAAAADAAcAAAD6/wYAAAACAAcAAAD6/wcAAAABAAQAAAD7//f/AAAAAAcAAAD7//j/AAABAAcAAAD7//n/AAAAAAYAAAD7//r/AAAAAAYAAAD7//v/AAABAAcAAAD7//z/AAADAAcAAAD7//3/AAACAAcAAAD7//7/AAACAAYAAAD7////AAADAAcAAAD7/wAAAAAAAAYAAAD7/wEAAAAAAAYAAAD7/wIAAAAAAAcAAAD7/wMAAAADAAYAAAD7/wQAAAADAAYAAAD7/wUAAAADAAcAAAD7/wYAAAAAAAcAAAD7/wcAAAACAAQAAAD8//f/AAABAAYAAAD8//j/AAADAAYAAAD8//n/AAABAAYAAAD8//r/AAACAAcAAAD8//v/AAACAAcAAAD8//z/AAADAAcAAAD8//3/AAADAAYAAAD8//7/AAABAAcAAAD8////AAADAAYAAAD8/wAAAAAAAAYAAAD8/wEAAAAAAAcAAAD8/wIAAAABAAYAAAD8/wMAAAACAAYAAAD8/wQAAAADAAcAAAD8/wUAAAACAAYAAAD8/wYAAAACAAcAAAD8/wcAAAABAAQAAAD9//f/AAADAAYAAAD9//j/AAACAAcAAAD9//n/AAABAAcAAAD9//r/AAAAAAcAAAD9//v/AAAAAAcAAAD9//z/AAADAAYAAAD9//3/AAADAAYAAAD9//7/AAAAAAYAAAD9////AAABAAYAAAD9/wAAAAADAAYAAAD9/wEAAAADAAcAAAD9/wIAAAABAAcAAAD9/wMAAAADAAYAAAD9/wQAAAACAAcAAAD9/wUAAAACAAYAAAD9/wYAAAAAAAYAAAD9/wcAAAACAAQAAAD+//f/AAAAAAcAAAD+//j/AAABAAcAAAD+//n/AAAAAAYAAAD+//r/AAACAAcAAAD+//v/AAADAAYAAAD+//z/AAACAAYAAAD+//3/AAABAAcAAAD+//7/AAAAAAYAAAD+////AAAAAAcAAAD+/wAAAAADAAcAAAD+/wEAAAACAAYAAAD+/wIAAAABAAYAAAD+/wMAAAACAAYAAAD+/wQAAAACAAcAAAD+/wUAAAADAAcAAAD+/wYAAAABAAcAAAD+/wcAAAABAAQAAAD///f/AAABAAYAAAD///j/AAAAAAYAAAD///n/AAADAAcAAAD///r/AAACAAYAAAD///v/AAABAAcAAAD///z/AAAAAAcAAAD///3/AAABAAcAAAD///7/AAACAAYAAAD/////AAAAAAcAAAD//wAAAAABAAcAAAD//wEAAAABAAcAAAD//wIAAAADAAcAAAD//wMAAAAAAAYAAAD//wQAAAADAAcAAAD//wUAAAAAAAcAAAD//wYAAAABAAYAAAD//wcAAAACAAQAAAAAAPf/AAACAAcAAAAAAPj/AAABAAcAAAAAAPn/AAAAAAcAAAAAAPr/AAACAAcAAAAAAPv/AAACAAcAAAAAAPz/AAABAAYAAAAAAP3/AAAAAAcAAAAAAP7/AAADAAcAAAAAAP//AAACAAcAAAAAAAAAAAAAAAYAAAAAAAEAAAADAAcAAAAAAAIAAAACAAYAAAAAAAMAAAAAAAYAAAAAAAQAAAABAAcAAAAAAAUAAAABAAcAAAAAAAYAAAAAAAYAAAAAAAcAAAABAAQAAAABAPf/AAABAAYAAAABAPj/AAAAAAYAAAABAPn/AAABAAYAAAABAPr/AAADAAcAAAABAPv/AAAAAAYAAAABAPz/AAABAAYAAAABAP3/AAACAAcAAAABAP7/AAAAAAcAAAABAP//AAADAAYAAAABAAAAAAABAAYAAAABAAEAAAABAAcAAAABAAIAAAADAAYAAAABAAMAAAAAAAcAAAABAAQAAAABAAcAAAABAAUAAAACAAcAAAABAAYAAAADAAcAAAABAAcAAAACAAQAAAACAPf/AAABAAYAAAACAPj/AAAAAAYAAAACAPn/AAACAAYAAAACAPr/AAADAAYAAAACAPv/AAAAAAcAAAACAPz/AAACAAYAAAACAP3/AAADAAcAAAACAP7/AAABAAYAAAACAP//AAABAAcAAAACAAAAAAAAAAcAAAACAAEAAAACAAcAAAACAAIAAAAAAAcAAAACAAMAAAADAAYAAAACAAQAAAAAAAYAAAACAAUAAAACAAcAAAACAAYAAAACAAYAAAACAAcAAAABAAQAAAADAPf/AAAAAAYAAAADAPj/AAAAAAYAAAADAPn/AAADAAcAAAADAPr/AAABAAYAAAADAPv/AAAAAAcAAAADAPz/AAABAAYAAAADAP3/AAAAAAcAAAADAP7/AAAAAAYAAAADAP//AAACAAYAAAADAAAAAAADAAYAAAADAAEAAAACAAcAAAADAAIAAAADAAYAAAADAAMAAAADAAcAAAADAAQAAAADAAYAAAADAAUAAAACAAcAAAADAAYAAAAAAAYAAAADAAcAAAACAAQAAAAEAPf/AAADAAYAAAAEAPj/AAACAAYAAAAEAPn/AAADAAYAAAAEAPr/AAAAAAcAAAAEAPv/AAABAAcAAAAEAPz/AAACAAcAAAAEAP3/AAADAAcAAAAEAP7/AAADAAYAAAAEAP//AAACAAYAAAAEAAAAAAAAAAcAAAAEAAEAAAAAAAYAAAAEAAIAAAAAAAYAAAAEAAMAAAAAAAYAAAAEAAQAAAAAAAcAAAAEAAUAAAADAAYAAAAEAAYAAAAAAAYAAAAEAAcAAAABAAQAAAAFAPf/AAABAAYAAAAFAPj/AAAAAAYAAAAFAPn/AAABAAYAAAAFAPr/AAACAAYAAAAFAPv/AAACAAcAAAAFAPz/AAADAAYAAAAFAP3/AAABAAcAAAAFAP7/AAAAAAYAAAAFAP//AAAAAAYAAAAFAAAAAAADAAcAAAAFAAEAAAACAAcAAAAFAAIAAAAAAAYAAAAFAAMAAAACAAYAAAAFAAQAAAABAAYAAAAFAAUAAAACAAYAAAAFAAYAAAACAAYAAAAFAAcAAAACAAQAAAAGAPf/AAABAAYAAAAGAPj/AAABAAYAAAAGAPn/AAAAAAYAAAAGAPr/AAACAAYAAAAGAPv/AAAAAAcAAAAGAPz/AAAAAAcAAAAGAP3/AAADAAYAAAAGAP7/AAAAAAYAAAAGAP//AAADAAYAAAAGAAAAAAADAAcAAAAGAAEAAAABAAcAAAAGAAIAAAAAAAYAAAAGAAMAAAABAAYAAAAGAAQAAAADAAYAAAAGAAUAAAADAAYAAAAGAAYAAAABAAYAAAAGAAcAAAABAAQAAAAHAPf/AAADAAYAAAAHAPj/AAABAAcAAAAHAPn/AAABAAYAAAAHAPr/AAACAAYAAAAHAPv/AAACAAcAAAAHAPz/AAAAAAcAAAAHAP3/AAABAAcAAAAHAP7/AAACAAYAAAAHAP//AAACAAcAAAAHAAAAAAAAAAYAAAAHAAEAAAACAAYAAAAHAAIAAAABAAcAAAAHAAMAAAAAAAYAAAAHAAQAAAADAAYAAAAHAAUAAAAAAAcAAAAHAAYAAAADAAcAAAAHAAcAAAACAAQAAAAIAPf/AAADAAYAAAAIAPj/AAABAAYAAAAIAPn/AAADAAcAAAAIAPr/AAACAAYAAAAIAPv/AAABAAcAAAAIAPz/AAAAAAYAAAAIAP3/AAAAAAYAAAAIAP7/AAADAAYAAAAIAP//AAADAAYAAAAIAAAAAAADAAYAAAAIAAEAAAADAAcAAAAIAAIAAAABAAcAAAAIAAMAAAABAAcAAAAIAAQAAAAAAAcAAAAIAAUAAAABAAcAAAAIAAYAAAADAAcAAAAIAAcAAAABAAQAAAAJAPf/AAAAAAYAAAAJAPj/AAAAAAYAAAAJAPn/AAADAAYAAAAJAPr/AAACAAcAAAAJAPv/AAADAAcAAAAJAPz/AAAAAAYAAAAJAP3/AAABAAYAAAAJAP7/AAADAAcAAAAJAP//AAADAAcAAAAJAAAAAAAAAAYAAAAJAAEAAAACAAYAAAAJAAIAAAACAAcAAAAJAAMAAAABAAcAAAAJAAQAAAAAAAcAAAAJAAUAAAAAAAcAAAAJAAYAAAACAAYAAAAJAAcAAAACAAQAAAAKAPf/AAABAAcAAAAKAPj/AAAAAAYAAAAKAPn/AAACAAcAAAAKAPr/AAABAAcAAAAKAPv/AAAAAAYAAAAKAPz/AAADAAYAAAAKAP3/AAABAAcAAAAKAP7/AAAAAAcAAAAKAP//AAADAAcAAAAKAAAAAAACAAYAAAAKAAEAAAACAAcAAAAKAAIAAAACAAYAAAAKAAMAAAABAAcAAAAKAAQAAAACAAYAAAAKAAUAAAADAAYAAAAKAAYAAAABAAYAAAAKAAcAAAABAAQAAAALAPf/AAAAAAYAAAALAPj/AAAAAAYAAAALAPn/AAACAAYAAAALAPr/AAABAAcAAAALAPv/AAAAAAYAAAALAPz/AAABAAcAAAALAP3/AAABAAcAAAALAP7/AAAAAAYAAAALAP//AAABAAYAAAALAAAAAAADAAcAAAALAAEAAAADAAcAAAALAAIAAAACAAcAAAALAAMAAAAAAAYAAAALAAQAAAADAAcAAAALAAUAAAABAAYAAAALAAYAAAAAAAYAAAALAAcAAAACAAQAAAD0//X/AAABAAAAAAD0//b/AAABAAEAAAD1//X/AAACAAAAAAD1//b/AAACAAEAAAD2//X/AAABAAAAAAD2//b/AAABAAEAAAD3//X/AAACAAAAAAD3//b/AAACAAEAAAD4//X/AAABAAAAAAD4//b/AAABAAEAAAD5//X/AAACAAAAAAD5//b/AAACAAEAAAD6//X/AAABAAAAAAD6//b/AAABAAEAAAD7//X/AAACAAAAAAD7//b/AAACAAEAAAD8//X/AAABAAAAAAD8//b/AAABAAEAAAD9//X/AAACAAAAAAD9//b/AAACAAEAAAD+//X/AAABAAAAAAD+//b/AAABAAEAAAD///X/AAACAAAAAAD///b/AAACAAEAAAAAAPX/AAABAAAAAAAAAPb/AAABAAEAAAABAPX/AAACAAAAAAABAPb/AAACAAEAAAACAPX/AAABAAAAAAACAPb/AAABAAEAAAADAPX/AAACAAAAAAADAPb/AAACAAEAAAAEAPX/AAABAAAAAAAEAPb/AAABAAEAAAAFAPX/AAACAAAAAAAFAPb/AAACAAEAAAAGAPX/AAABAAAAAAAGAPb/AAABAAEAAAAHAPX/AAACAAAAAAAHAPb/AAACAAEAAAAIAPX/AAABAAAAAAAIAPb/AAABAAEAAAAJAPX/AAACAAAAAAAJAPb/AAACAAEAAAAKAPX/AAABAAAAAAAKAPb/AAABAAEAAAALAPX/AAACAAAAAAALAPb/AAACAAEAAADz//X/AAAAAAAAAADz//b/AAAAAAEAAAAMAPX/AAADAAAAAAAMAPb/AAADAAEAAADz/wcAAAAAAAQAAADz/wgAAAAAAAUAAAAMAAcAAAADAAQAAAAMAAgAAAADAAUAAAD0/wgAAAABAAUAAAD1/wgAAAACAAUAAAD2/wgAAAABAAUAAAD3/wgAAAACAAUAAAD4/wgAAAABAAUAAAD5/wgAAAACAAUAAAD6/wgAAAABAAUAAAD7/wgAAAACAAUAAAD8/wgAAAABAAUAAAD9/wgAAAACAAUAAAD+/wgAAAABAAUAAAD//wgAAAACAAUAAAAAAAgAAAABAAUAAAABAAgAAAACAAUAAAACAAgAAAABAAUAAAADAAgAAAACAAUAAAAEAAgAAAABAAUAAAAFAAgAAAACAAUAAAAGAAgAAAABAAUAAAAHAAgAAAACAAUAAAAIAAgAAAABAAUAAAAJAAgAAAACAAUAAAAKAAgAAAABAAUAAAALAAgAAAACAAUAAADz//f/AAAAAAIAAADz//j/AAAAAAMAAADz//n/AAAAAAIAAADz//r/AAAAAAMAAADz//v/AAAAAAIAAADz//z/AAAAAAMAAADz//3/AAAAAAIAAADz//7/AAAAAAMAAADz////AAAAAAIAAADz/wAAAAAAAAMAAADz/wEAAAAAAAIAAADz/wIAAAAAAAMAAADz/wMAAAAAAAIAAADz/wQAAAAAAAMAAADz/wUAAAAAAAIAAADz/wYAAAAAAAMAAAAMAPf/AAADAAIAAAAMAPj/AAADAAMAAAAMAPn/AAADAAIAAAAMAPr/AAADAAMAAAAMAPv/AAADAAIAAAAMAPz/AAADAAMAAAAMAP3/AAADAAIAAAAMAP7/AAADAAMAAAAMAP//AAADAAIAAAAMAAAAAAADAAMAAAAMAAEAAAADAAIAAAAMAAIAAAADAAMAAAAMAAMAAAADAAIAAAAMAAQAAAADAAMAAAAMAAUAAAADAAIAAAAMAAYAAAADAAMAAAA=")
-tile_set = SubResource("TileSet_fws66")
 
 [node name="Level" type="Node" parent="SplitScreen2D/TileMapLayer"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="SplitScreen2D/TileMapLayer/Level" groups=["A"]]
-visibility_layer = 63
-position = Vector2(-37, -23)
-
-[node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D"]
-visibility_layer = 0
-texture = ExtResource("2_j7wrs")
-hframes = 4
-frame = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D"]
-position = Vector2(-3.5, 3)
-shape = SubResource("RectangleShape2D_04qyp")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="SplitScreen2D/TileMapLayer/Level" groups=["B"]]
-visibility_layer = 63
-collision_layer = 2
-collision_mask = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D2"]
-visibility_layer = 18
-texture = ExtResource("2_j7wrs")
-hframes = 4
-frame = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D2"]
-position = Vector2(-3.5, 3)
-shape = SubResource("RectangleShape2D_04qyp")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="SplitScreen2D/TileMapLayer/Level" groups=["C"]]
-visibility_layer = 63
-position = Vector2(32, -19)
-collision_layer = 4
-collision_mask = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D3"]
-visibility_layer = 0
-texture = ExtResource("2_j7wrs")
-hframes = 4
-frame = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/TileMapLayer/Level/StaticBody2D3"]
-position = Vector2(-3.5, 3)
-shape = SubResource("RectangleShape2D_04qyp")
-
-[node name="PizzaPart" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(-86, 41)
-dim = "C"
-
-[node name="PizzaPart2" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(23, 56)
-dim = "C"
-
-[node name="PizzaPart3" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(105, -89)
-dim = "A"
-
-[node name="PizzaPart4" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(-152, -71)
-dim = "A"
-
-[node name="PizzaPart5" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(-90, -105)
-
-[node name="PizzaPart6" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(25, -103)
-
-[node name="PizzaPart7" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(120, 39)
-
-[node name="PizzaPart8" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_hh0fu")]
-position = Vector2(-165, -19)
-
-[node name="Area2D" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(70.13, 20.375)
-scale = Vector2(0.71, 0.71)
-
-[node name="Area2D2" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(-43.225, 20.375)
-scale = Vector2(0.71, 0.71)
-key_id = "clef_2"
-
-[node name="Area2D3" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(39.36, -51.63)
-scale = Vector2(0.71, 0.71)
-dim = "C"
-key_id = "clef_3"
-
-[node name="Area2D4" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(-97.6, 80.92)
-scale = Vector2(-0.695, -0.695)
-dim = "C"
-key_id = "clef_4"
-
-[node name="Coffre" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("7_08kqv")]
-position = Vector2(156.00002, -83)
-scale = Vector2(0.33, 0.33)
-dim = "C"
-
 [node name="player1" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3
-position = Vector2(-81, -23)
+position = Vector2(-1953, -1286)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_04qyp")
@@ -254,19 +43,21 @@ dialog_scene = ExtResource("8_dubn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/player1"]
 visibility_layer = 3
-texture = ExtResource("3_j7wrs")
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("7_3m5ht")
 hframes = 4
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/player1"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_hh0fu")
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_08kqv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SplitScreen2D/player1"]
 stream = ExtResource("10_dubn7")
 
 [node name="player2" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3
-position = Vector2(110, -25)
+position = Vector2(0, -37)
 collision_layer = 18
 collision_mask = 18
 script = ExtResource("2_04qyp")
@@ -276,12 +67,14 @@ dialog_scene = ExtResource("8_dubn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/player2"]
 visibility_layer = 3
-texture = ExtResource("3_j7wrs")
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("9_dubn7")
 hframes = 4
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SplitScreen2D/player2"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_hh0fu")
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_f6ptj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SplitScreen2D/player2"]
 stream = ExtResource("10_dubn7")

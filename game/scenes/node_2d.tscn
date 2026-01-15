@@ -283,13 +283,14 @@ dest = Vector2(-1999, -1158)
 position = Vector2(-1768, -1104)
 dim = "C"
 
-[node name="Coffre" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3kg8w")]
+[node name="Coffre1" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3kg8w")]
+show_behind_parent = true
 position = Vector2(-2380, 732)
 scale = Vector2(1.005, 1.005)
 
-[node name="Area2D" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(450, -300)
-scale = Vector2(1.965, 1.965)
+[node name="Clef1" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
+position = Vector2(-1942.9998, -1191)
+scale = Vector2(0.765, 0.765)
 dim = "C"
 
 [node name="Maps" type="Node" parent="SplitScreen2D/TileMapLayer"]

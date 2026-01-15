@@ -4,6 +4,8 @@ class_name PressurePlate
 @export var id: int = 0
 @export_enum("A", "B", "C") var dim: String = "B"
 
+@onready var animation: AnimationPlayer = get_node("AnimationPlayer")
+
 func _ready() -> void:
 	match dim:
 		"A":
@@ -28,7 +30,13 @@ func find_boulder():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		animation.play("down")
 		var boulder = find_boulder()
 		if boulder != null:
 			if not boulder.has_moved:
 				boulder.move()
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is Player:
+		animation.play("up")

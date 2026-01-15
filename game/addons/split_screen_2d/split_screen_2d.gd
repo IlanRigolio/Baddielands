@@ -551,50 +551,25 @@ func update_objects_visibility(player: Player):
 	var objects = level.get_children()
 	var maps = maps_node.get_children()
 	for obj: Node in objects:
-		if obj.is_in_group("A"):
-			if player1.current_dim == "A":
-				obj.visibility_layer = 1
-				obj.get_node("Sprite2D").visibility_layer = 1
-			else:
-				obj.visibility_layer = 0
-				obj.get_node("Sprite2D").visibility_layer = 0
-		elif obj.is_in_group("B"):
-			if player1.current_dim == "B":
-				if player2.current_dim == "B":
-					obj.visibility_layer = 3
-					obj.get_node("Sprite2D").visibility_layer = 3
-				else:
-					obj.visibility_layer = 1
-					obj.get_node("Sprite2D").visibility_layer = 1
-			elif player2.current_dim == "B":
-				obj.visibility_layer = 2
-				obj.get_node("Sprite2D").visibility_layer = 2
-			else:
-				obj.visibility_layer = 0
-				obj.get_node("Sprite2D").visibility_layer = 0
-		elif obj.is_in_group("C"):
-			if player2.current_dim == "C":
-				obj.visibility_layer = 2
-				obj.get_node("Sprite2D").visibility_layer = 2
-			else:
-				obj.visibility_layer = 0
-				obj.get_node("Sprite2D").visibility_layer = 0
+		if obj.is_in_group(player1.current_dim):
+			obj.visibility_layer |= 1
+			obj.get_node("Sprite2D").visibility_layer |= 1
+		else:
+			obj.visibility_layer &= ~1
+			obj.get_node("Sprite2D").visibility_layer &= ~1
+		if obj.is_in_group(player2.current_dim):
+			obj.visibility_layer |= 2
+			obj.get_node("Sprite2D").visibility_layer |= 2
+		else:
+			obj.visibility_layer &= ~2
+			obj.get_node("Sprite2D").visibility_layer &= ~2
 	
 	for map: TileMapLayer in maps:
-		if map.is_in_group("A"):
-			if player1.current_dim == "A":
-				map.get_node("../TileMapLayerVert").visibility_layer &= ~1
-				map.visibility_layer = 1
-			else:
-				map.visibility_layer = 0
-		elif map.is_in_group("B"):
-			if player1.current_dim == "B":
-				map.visibility_layer |= 1
-			if player2.current_dim == "B":
-				map.visibility_layer |= 2
+		if map.is_in_group(player1.current_dim):
+			map.visibility_layer |= 1
 		else:
-			if player2.current_dim == "C":
-				map.get_node("../TileMapLayerVert").visibility_layer &= ~2
-				map.visibility_layer = 2
-			else:
-				map.visibility_layer = 0
+			map.visibility_layer &= ~1
+		if map.is_in_group(player2.current_dim):
+			map.visibility_layer |= 2
+		else:
+			map.visibility_layer &= ~2

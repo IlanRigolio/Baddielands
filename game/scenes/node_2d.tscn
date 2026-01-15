@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=31 format=3 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2v2cqijnaav" path="res://scenes/tile_map_layer_blue.tscn" id="10_08kqv"]
 [ext_resource type="AudioStream" uid="uid://cl6jwboc6q207" path="res://assets/Transition.mp3" id="10_dubn7"]
 [ext_resource type="AudioStream" uid="uid://booqetlcm8rsp" path="res://assets/YellowBiome.mp3" id="15_xtx0q"]
+[ext_resource type="Script" uid="uid://c1gco5tb2m4j0" path="res://scripts/hud.gd" id="18_0q20i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08kqv"]
 radius = 11.0
@@ -364,3 +365,81 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_xtx0q")
 autoplay = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("18_0q20i")
+
+[node name="timer" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -290.0
+offset_right = 20.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HUD/pause"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 40.0
+scale = Vector2(1.155601, 16.226717)
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="Label" type="Label" parent="HUD/pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -137.0
+offset_right = 26.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE"
+
+[node name="ResumeButton" type="Button" parent="HUD/pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.5
+offset_right = 50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "REPRENDRE"
+
+[node name="MenuButton" type="Button" parent="HUD/pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 33.0
+offset_right = 71.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU PRINCIPAL"

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djyoanikcaubg" path="res://assets/Tileset/dimension_rose.png" id="1_475t6"]
 
 [node name="boulder" type="StaticBody2D" groups=["A", "B", "C"]]
+visibility_layer = 3
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_7lox5")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbockyqhh2idj"]
+
+[ext_resource type="Script" uid="uid://c2j06bxalw6od" path="res://scripts/boulder.gd" id="1_7lox5"]
+[ext_resource type="Texture2D" uid="uid://djyoanikcaubg" path="res://assets/Tileset/dimension_rose.png" id="1_475t6"]
+
+[node name="boulder" type="StaticBody2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_7lox5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_475t6")
+region_enabled = true
+region_rect = Rect2(1648, 1024, 48, 48)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, -5, -22, 23, 24, 23, 23, 8, 17, -5)

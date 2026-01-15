@@ -1,0 +1,34 @@
+extends Area2D
+class_name PressurePlate
+
+@export var id: int = 0
+@export_enum("A", "B", "C") var dim: String = "B"
+
+func _ready() -> void:
+	match dim:
+		"A":
+			add_to_group("A")
+			collision_layer = 1
+			collision_mask = 1
+		"B":
+			add_to_group("B")
+			collision_layer = 2
+			collision_mask = 2
+		"C":
+			add_to_group("C")
+			collision_layer = 4
+			collision_mask = 4
+
+func find_boulder():
+	var objects = get_node("..").get_children()
+	for obj in objects:
+		if obj is Boulder:
+			if obj.id == id:
+				return obj
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		var boulder = find_boulder()
+		if boulder != null:
+			if not boulder.has_moved:
+				boulder.move()

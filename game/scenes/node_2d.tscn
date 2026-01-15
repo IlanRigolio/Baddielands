@@ -284,12 +284,11 @@ position = Vector2(-1768, -1104)
 dim = "C"
 
 [node name="Coffre1" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3kg8w")]
-show_behind_parent = true
-position = Vector2(-2380, 732)
+position = Vector2(-390.00003, -612.00006)
 scale = Vector2(1.005, 1.005)
 
 [node name="Clef1" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(-1942.9998, -1191)
+position = Vector2(-1968.0001, -1348)
 scale = Vector2(0.765, 0.765)
 dim = "C"
 
@@ -306,7 +305,7 @@ visibility_layer = 0
 
 [node name="player1" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3
-position = Vector2(-1953, -1286)
+position = Vector2(-1260, 560)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_04qyp")

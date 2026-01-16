@@ -373,6 +373,18 @@ autoplay = true
 process_mode = 3
 script = ExtResource("18_0q20i")
 
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 26.0
+offset_right = -20.0
+offset_bottom = 66.0
+grow_horizontal = 2
+scale = Vector2(2.9999952, 1)
+color = Color(0, 0, 0, 0.72156864)
+
 [node name="timer" type="Label" parent="HUD"]
 anchors_preset = 8
 anchor_left = 0.5

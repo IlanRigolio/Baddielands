@@ -1,9 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://t6hbbevmxsfc"]
+[gd_scene load_steps=10 format=3 uid="uid://t6hbbevmxsfc"]
 
 [ext_resource type="Script" uid="uid://bt68vl1bgwrs1" path="res://scripts/main_menu.gd" id="1_yqorp"]
 [ext_resource type="Texture2D" uid="uid://bwsx0d4w4pih5" path="res://assets/baddielands_main.png" id="2_2wh52"]
+[ext_resource type="Shader" uid="uid://co7fr6mgmqr17" path="res://scripts/MainMenu.gdshader" id="2_l72w3"]
 [ext_resource type="FontFile" uid="uid://dnhw78ke4xkqb" path="res://assets/JollyLodger-Regular.ttf" id="3_ow34m"]
 [ext_resource type="AudioStream" uid="uid://b75odw1s0r40" path="res://assets/MusicForBlueBiome.mp3" id="4_ow34m"]
+[ext_resource type="Script" uid="uid://bcbfl3skhgy2e" path="res://scripts/button.gd" id="5_826wr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_826wr"]
+noise_type = 3
+frequency = 0.05
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ucygd"]
+width = 2048
+height = 64
+noise = SubResource("FastNoiseLite_826wr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_826wr"]
+shader = ExtResource("2_l72w3")
+shader_parameter/hair_noise = SubResource("NoiseTexture2D_ucygd")
+shader_parameter/vignette_strength = 0.8
+shader_parameter/hair_color = Color(0.99215686, 0.972549, 0.8784314, 0.5882353)
+shader_parameter/hair_thickness = 0.0010000000475
+shader_parameter/hair_threshold = 0.950000045125
+shader_parameter/hair_len = 0.40000001737006
+shader_parameter/jump_speed = 10.0000004275
+shader_parameter/vibration_speed = 30.0
+shader_parameter/vibration_amt = 0.002000000095
+shader_parameter/curve_strength = 0.030000001425
+shader_parameter/curve_frequency = 5.00000019
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,6 +48,33 @@ scale = Vector2(0.60120076, 0.60120076)
 texture = ExtResource("2_2wh52")
 stretch_mode = 6
 
+[node name="meilleur_tps" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -608.0
+offset_right = 20.0
+offset_bottom = -585.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_ow34m")
+theme_override_font_sizes/font_size = 30
+text = "Meilleur Temps : --:--:--"
+
+[node name="OldFilmEffect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_826wr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -35,9 +88,11 @@ offset_right = 32.0
 offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_bottom = NodePath("../QuitButton")
 theme_override_fonts/font = ExtResource("3_ow34m")
 theme_override_font_sizes/font_size = 30
 text = "JOUER"
+script = ExtResource("5_826wr")
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
@@ -52,9 +107,11 @@ offset_right = 42.0
 offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../PlayButton")
 theme_override_fonts/font = ExtResource("3_ow34m")
 theme_override_font_sizes/font_size = 30
 text = "QUITTER"
+script = ExtResource("5_826wr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ow34m")

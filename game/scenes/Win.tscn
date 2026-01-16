@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://br38f1rkyev5i"]
+[gd_scene load_steps=6 format=3 uid="uid://br38f1rkyev5i"]
 
 [ext_resource type="Script" uid="uid://cohe0kb58huvg" path="res://scripts/win.gd" id="1_pnk8a"]
 [ext_resource type="Texture2D" uid="uid://bwsx0d4w4pih5" path="res://assets/baddielands_main.png" id="2_gq6tj"]
 [ext_resource type="FontFile" uid="uid://dnhw78ke4xkqb" path="res://assets/JollyLodger-Regular.ttf" id="3_npi8v"]
 [ext_resource type="AudioStream" uid="uid://c26kiygxwolas" path="res://assets/MusicForDaGJ.mp3" id="4_npi8v"]
+[ext_resource type="Script" uid="uid://bcbfl3skhgy2e" path="res://scripts/button.gd" id="4_tgfro"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -49,9 +50,11 @@ offset_right = 29.0
 offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_bottom = NodePath("../QuitButton")
 theme_override_fonts/font = ExtResource("3_npi8v")
 theme_override_font_sizes/font_size = 30
 text = "JOUER"
+script = ExtResource("4_tgfro")
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
@@ -66,9 +69,11 @@ offset_right = 42.0
 offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../PlayButton")
 theme_override_fonts/font = ExtResource("3_npi8v")
 theme_override_font_sizes/font_size = 30
 text = "QUITTER"
+script = ExtResource("4_tgfro")
 
 [node name="tpsfinal" type="Label" parent="."]
 layout_mode = 1

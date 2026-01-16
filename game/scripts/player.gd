@@ -40,6 +40,8 @@ func _ready() -> void:
 	connect("switch_dim", splitscreen.switch_dim)
 
 func _physics_process(_delta: float) -> void:
+	if get_tree().paused:
+		return
 	if not falling:
 		var direction_x := Input.get_axis(controls.get(role).get("left"), controls.get(role).get("right"))
 		var direction_y := Input.get_axis(controls.get(role).get("up"), controls.get(role).get("down"))
@@ -51,15 +53,17 @@ func _physics_process(_delta: float) -> void:
 			velocity.y = direction_y * SPEED
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
-		
-		if Input.is_action_just_pressed(controls.get(role).get("switch")):
-			swicth_dim()
-			
-		if Input.is_action_just_pressed(controls.get(role).get("drop")):
-			drop_key()
-		
+
 		update_animation()
 		move_and_slide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	var action_switch = controls.get(role).get("switch")
+	var action_drop = controls.get(role).get("drop")
+	if event.is_action_pressed(action_switch):
+		swicth_dim()
+	if event.is_action_pressed(action_drop):
+		drop_key()
 
 func swicth_dim():
 	show_message("Vous changez de dimension !")

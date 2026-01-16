@@ -677,6 +677,11 @@ offset_bottom = -267.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HUD"]
+process_mode = 3
+stream = ExtResource("21_coh8c")
+volume_db = -14.857
+
 [node name="pause" type="Control" parent="HUD"]
 visible = false
 layout_mode = 3
@@ -693,21 +698,6 @@ offset_bottom = 40.0
 scale = Vector2(0.60131586, 0.60131586)
 texture = ExtResource("19_k6u5g")
 
-[node name="Label" type="Label" parent="HUD/pause"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -137.0
-offset_right = 26.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "PAUSE"
-
 [node name="ResumeButton" type="Button" parent="HUD/pause"]
 layout_mode = 1
 anchors_preset = 8
@@ -721,9 +711,11 @@ offset_right = 50.0
 offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_bottom = NodePath("../MenuButton")
 theme_override_fonts/font = ExtResource("20_coh8c")
 theme_override_font_sizes/font_size = 30
 text = "REPRENDRE"
+script = ExtResource("17_0q20i")
 
 [node name="MenuButton" type="Button" parent="HUD/pause"]
 layout_mode = 1
@@ -738,10 +730,8 @@ offset_right = 82.0
 offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../ResumeButton")
 theme_override_fonts/font = ExtResource("20_coh8c")
 theme_override_font_sizes/font_size = 30
 text = "MENU PRINCIPAL"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HUD/pause"]
-stream = ExtResource("21_coh8c")
-volume_db = -14.857
+script = ExtResource("17_0q20i")

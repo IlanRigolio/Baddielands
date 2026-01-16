@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://t6hbbevmxsfc"]
+[gd_scene load_steps=5 format=3 uid="uid://t6hbbevmxsfc"]
 
 [ext_resource type="Script" uid="uid://bt68vl1bgwrs1" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="Texture2D" uid="uid://bwsx0d4w4pih5" path="res://assets/baddielands_main.png" id="2_2wh52"]
+[ext_resource type="FontFile" uid="uid://dnhw78ke4xkqb" path="res://assets/JollyLodger-Regular.ttf" id="3_ow34m"]
+[ext_resource type="AudioStream" uid="uid://b75odw1s0r40" path="res://assets/MusicForBlueBiome.mp3" id="4_ow34m"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,17 +14,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqorp")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -57.0
-offset_top = 63.0
-offset_right = 54.0
-offset_bottom = 86.0
-grow_horizontal = 2
-text = "BADDIELANDS"
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.60120076, 0.60120076)
+texture = ExtResource("2_2wh52")
+stretch_mode = 6
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
@@ -30,12 +29,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.5
-offset_top = -15.5
-offset_right = 28.5
-offset_bottom = 15.5
+offset_left = -31.0
+offset_top = 70.0
+offset_right = 32.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ow34m")
+theme_override_font_sizes/font_size = 30
 text = "JOUER"
 
 [node name="QuitButton" type="Button" parent="."]
@@ -45,10 +46,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -37.0
-offset_top = 36.0
-offset_right = 38.0
-offset_bottom = 67.0
+offset_left = -40.0
+offset_top = 130.0
+offset_right = 42.0
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ow34m")
+theme_override_font_sizes/font_size = 30
 text = "QUITTER"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ow34m")
+autoplay = true

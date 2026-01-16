@@ -13,8 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_game_running:
 		time_elapsed += delta
-	if Input.is_action_just_pressed("ui_cheat"):
-		win_game()
 
 func start_game():
 	time_elapsed = 0.0

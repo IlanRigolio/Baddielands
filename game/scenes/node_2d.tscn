@@ -1,14 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=26 format=3 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
 [ext_resource type="Script" uid="uid://hst4xu3tv5o1" path="res://scripts/player.gd" id="2_04qyp"]
 [ext_resource type="PackedScene" uid="uid://c0lmirklkq38w" path="res://scenes/tile_map_layer.tscn" id="3_hh0fu"]
-[ext_resource type="PackedScene" uid="uid://dbockyqhh2idj" path="res://scenes/boulder.tscn" id="4_ifa78"]
-[ext_resource type="TileSet" uid="uid://pls3ph4o8bvu" path="res://resources/tile_map_layer_collision.tres" id="4_x63s8"]
 [ext_resource type="PackedScene" uid="uid://cg5f3l0aujfoy" path="res://scenes/tile_map_layer_green.tscn" id="5_f6ptj"]
-[ext_resource type="PackedScene" uid="uid://cl8q5nkln5pqa" path="res://scenes/pressure_plate.tscn" id="5_xtx0q"]
-[ext_resource type="PackedScene" uid="uid://11mk0mjb684e" path="res://scenes/coffre.tscn" id="6_3kg8w"]
 [ext_resource type="PackedScene" uid="uid://yda71n84sshf" path="res://scenes/clef.tscn" id="6_3m5ht"]
 [ext_resource type="PackedScene" uid="uid://dsjs43kovul5f" path="res://scenes/tile_map_layer_pink.tscn" id="6_hsdmi"]
 [ext_resource type="Texture2D" uid="uid://bfuw4dus33npe" path="res://assets/Characters/moona.png" id="7_3m5ht"]
@@ -271,26 +267,8 @@ max_players = 2
 metadata/_custom_type_script = "uid://bpaq3fo7mra4m"
 
 [node name="TileMapLayer" parent="SplitScreen2D" instance=ExtResource("3_hh0fu")]
-tile_set = ExtResource("4_x63s8")
 
 [node name="Level" type="Node" parent="SplitScreen2D/TileMapLayer"]
-
-[node name="boulder" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("4_ifa78")]
-position = Vector2(-1948, -1200)
-dest = Vector2(-1999, -1158)
-
-[node name="PressurePlate" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("5_xtx0q")]
-position = Vector2(-1768, -1104)
-dim = "C"
-
-[node name="Coffre1" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3kg8w")]
-position = Vector2(-390.00003, -612.00006)
-scale = Vector2(1.005, 1.005)
-
-[node name="Clef1" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("6_3m5ht")]
-position = Vector2(-1968.0001, -1348)
-scale = Vector2(0.765, 0.765)
-dim = "C"
 
 [node name="Maps" type="Node" parent="SplitScreen2D/TileMapLayer"]
 
@@ -298,13 +276,13 @@ dim = "C"
 visibility_layer = 0
 
 [node name="B" parent="SplitScreen2D/TileMapLayer/Maps" groups=["B"] instance=ExtResource("5_f6ptj")]
-visibility_layer = 3
 
 [node name="C" parent="SplitScreen2D/TileMapLayer/Maps" groups=["C"] instance=ExtResource("6_hsdmi")]
 visibility_layer = 0
 
 [node name="player1" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3
+y_sort_enabled = true
 position = Vector2(-1260, 560)
 collision_layer = 2
 collision_mask = 2
@@ -315,6 +293,7 @@ dialog_scene = ExtResource("8_dubn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/player1"]
 visibility_layer = 3
+y_sort_enabled = true
 scale = Vector2(0.535, 0.535)
 texture = ExtResource("7_3m5ht")
 hframes = 4
@@ -334,9 +313,10 @@ libraries = {
 
 [node name="player2" type="CharacterBody2D" parent="SplitScreen2D"]
 visibility_layer = 3
+y_sort_enabled = true
 position = Vector2(0, -37)
-collision_layer = 18
-collision_mask = 18
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_04qyp")
 role = "Player2"
 clef_scene = ExtResource("6_3m5ht")
@@ -344,6 +324,7 @@ dialog_scene = ExtResource("8_dubn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SplitScreen2D/player2"]
 visibility_layer = 3
+y_sort_enabled = true
 scale = Vector2(0.535, 0.535)
 texture = ExtResource("9_dubn7")
 hframes = 4

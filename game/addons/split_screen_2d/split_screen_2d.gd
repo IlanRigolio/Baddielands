@@ -492,8 +492,6 @@ func switch_dim(player: Player):
 	var son = player.get_node("AudioStreamPlayer") 
 	son.pitch_scale = randf_range(0.9, 1.1)
 	son.play()
-	print(viewports[0].canvas_cull_mask)
-	print(viewports[1].canvas_cull_mask)
 	match player.role:
 		"Player1":
 			if player.current_dim == "A":

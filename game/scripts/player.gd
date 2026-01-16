@@ -147,3 +147,15 @@ func update_animation():
 func play_anim(animation_name: String):
 	if animation.has_animation(animation_name):
 		animation.play(animation_name)
+
+func fall(dest: Hole):
+	play_anim("fall")
+	await animation.animation_finished
+	jump_out(dest.jump_out_point)
+
+func jump_out(jump_out_point: Vector2):
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", jump_out_point, Vector2(jump_out_point - global_position).length() / SPEED * 2)
+	await tween.finished
+	play_anim("jump_out")
+	

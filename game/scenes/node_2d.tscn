@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=30 format=3 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2v2cqijnaav" path="res://scenes/tile_map_layer_blue.tscn" id="10_08kqv"]
 [ext_resource type="AudioStream" uid="uid://cl6jwboc6q207" path="res://assets/Transition.mp3" id="10_dubn7"]
 [ext_resource type="AudioStream" uid="uid://booqetlcm8rsp" path="res://assets/YellowBiome.mp3" id="15_xtx0q"]
-[ext_resource type="Script" uid="uid://c1gco5tb2m4j0" path="res://scripts/hud.gd" id="18_0q20i"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="18_0q20i"]
 [ext_resource type="Texture2D" uid="uid://cbmsdai2d630b" path="res://assets/pause_menu.png" id="19_k6u5g"]
 [ext_resource type="FontFile" uid="uid://dnhw78ke4xkqb" path="res://assets/JollyLodger-Regular.ttf" id="20_coh8c"]
 [ext_resource type="AudioStream" uid="uid://c26kiygxwolas" path="res://assets/MusicForDaGJ.mp3" id="21_coh8c"]

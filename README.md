@@ -1,71 +1,81 @@
-# gj4
+# 🍕 Baddielands
 
-# Baddielands
+> **"Another Dimension, Another Domension"** > *A puzzle co-op experience made for Game Jam 4.*
 
-**Baddielands** is a local split-screen co-op game made for the Game Jam 4 (Theme: Another Dimension, Another Domension).
-
-## Credits
-* **Creators:** Ilan Rigolio & Charles Thorin
-* **Art Assets:** Lesliana Martin
-* **Audio Assets:** Julien Baetens
-
-## 🍕 Goal
-Work together to collect **Pizza Slices** from locked chests.
-* **Player 1** lives in **Dimension A**.
-* **Player 2** lives in **Dimension C**.
-* **Dimension B** is the meeting point.
-
-Keys found in Dimension A open chests in Dimension C (and vice-versa). You must meet in Dimension B to exchange keys!
-
-## 🎮 Controls
-
-Action: 
-
-Player1 (left):
-
-Move : ZQSD
-Change dimension : E
-Drop key : A
-
-Player2 (right):
-
-Move : ZQSD
-Change dimension : right shift
-Drop Key : P
+**Baddielands** est un jeu de coopération locale en écran scindé où la communication est votre seule chance de gagner. Traversez les dimensions, échangez des objets entre les mondes et battez le chrono !
 
 ---
-*Made with Godot.*
 
+## 🌌 Le Concept
 
-## Contenu
+Deux joueurs, trois dimensions, un seul objectif : la Pizza.
 
-```
-├── README.md
-├── metadata.yaml
-├── run.sh
-├── artwork
-│   ├── cover.png
-│   ├── thumbnail.png
-│   └── video.mp4
-└── game
-    ├── ...
-    ├── ...
-    └── ...
-```
+* **Joueur 1** est coincé dans la **Dimension A**.
+* **Joueur 2** est coincé dans la **Dimension C**.
+* **La Dimension B** est le point de rencontre neutre.
 
-- `README.md` : ce fichier (à modifier pour décrire votre projet)
-- `metadata.yaml` : fichier de description du jeu, de l'équipe, des membres de l'équipe etc. Merci de le compléter au fur et à mesure (commencez par les infos sur l'équipe svp, qu'on puisse afficher la liste très vite).
-- `run.sh` : script de lancement du jeu (si vous ne savez pas quoi mettre dedans, laissez-le vide).
-- `artwork` : ce dossier contient deux images et une vidéo qui nous permettront d'annoncer la présentation du jeu depuis [`EmulationStation`](https://es-de.org/).
-- `cover.png` : affiche de votre jeu, au format 1:1 (800x800).
-- `thumbnail.png` : miniature du jeu, au format 1:1 également (256x256).
-- `video.mp4` : courte vidéo de présentation du jeu (ça peut être un diaporama de screenshots, une vidéo de démo etc.)
-- `game` : c'est dans ce dossier que vous allez mettre/développer votre jeu.
+**Le Twist :** Les clés trouvées en Dimension A ouvrent les coffres de la Dimension C (et inversement). Vous ne pouvez pas interagir avec les objets qui ne sont pas dans votre réalité.
 
-# Important
+**La Boucle :**
+1. Trouvez une clé dans votre monde.
+2. Basculez en **Dimension B** (terrain d'entente).
+3. Retrouvez votre partenaire et **lâchez** la clé.
+4. Votre partenaire la ramasse et l'emmène dans sa dimension pour débloquer son coffre !
 
-N'oubliez pas d'ajouter M. Blanchard à votre dépôt (utilisateur `blanch01`).
+---
 
-Votre `metadata.yaml` sera récupéré tous les soirs pour mettre à jour les fiches-équipes.
+## 🎮 Contrôles (Clavier AZERTY)
 
-Encore merci de votre participation !
+Le jeu se joue en **Coop Locale** (2 joueurs sur le même clavier).
+
+| Action | Joueur 1 (Gauche) | Joueur 2 (Droite) |
+| :--- | :---: | :---: |
+| **Se déplacer** | `Z`, `Q`, `S`, `D` | `Flèches Directionnelles` |
+| **Changer de dimension** | `E` | `Shift Droit` |
+| **Jeter un objet** | `A` | `P` |
+| **Menu / Pause** | `Echap` | `Echap` |
+| **Navigation Menus** | `touches pour se déplacer`| `touches pour se déplacer`
+| **Validation Menus** | `touches pour changer de dimension`| `touches pour changer de dimension`
+|**Reinitialiser le meilleur score**|`R`|`R`
+
+---
+
+## ✨ Points forts
+
+* **Puzzles Multidimensionnels :** Coordonnez-vous parfaitement pour transférer les objets.
+* **Split-Screen Dynamique :** S'adapte en temps réel à vos positions.
+* **Ambiance "Old Cinema" dans le menu:** Un shader unique et des transitions fluides.
+* **Système de Record :** Un mode Speedrun intégré avec sauvegarde automatique de votre meilleur temps.
+* **Musique Adaptative :** Une bande-son qui reste fluide à travers les sauts de dimension.
+
+---
+
+## 📥 Installation
+
+### Windows (en cours de déploiement)
+1. Téléchargez `Baddielands_Win.zip`.
+2. Extrayez le dossier.
+3. Lancez `Baddielands.exe`.
+
+### Linux (Ubuntu) (en cours de déploiement)
+1. Téléchargez `Baddielands_Linux.zip`.
+2. Extrayez les fichiers.
+3. Ouvrez un terminal dans le dossier et tapez : `chmod +x launch.sh`
+4. Lancez le jeu via `./launch.sh`.
+
+### Linux pour la GameJam !
+1. Clonez le dépot git : `git clone https://iut-info.univ-reims.fr/gitlab/thor0020/gj4.git`
+2. Lancez le run.sh
+
+(à adapter)
+
+---
+
+## 🛠️ Crédits
+
+* **Développement & Game Design :** Ilan Rigolio & Charles Thorin
+* **Art & Graphismes :** Lesliana Martin
+* **Audio & Musique :** Julien Baetens
+
+---
+*Développé sur le moteur **Godot 4.5.1**.*

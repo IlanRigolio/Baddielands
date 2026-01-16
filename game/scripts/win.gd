@@ -10,6 +10,7 @@ func _ready():
 		$PlayButton.pressed.connect(_on_replay_pressed)
 	if has_node("QuitButton"):
 		$QuitButton.pressed.connect(_on_quit_pressed)
+	$PlayButton.grab_focus()
 		
 func _on_replay_pressed():
 	GameManager.start_game()

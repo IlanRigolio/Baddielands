@@ -3,6 +3,15 @@ extends Control
 func _ready():
 	$PlayButton.pressed.connect(_on_play_pressed)
 	$QuitButton.pressed.connect(_on_quit_pressed)
+	update_besttime()
+	$PlayButton.grab_focus()
+	
+func update_besttime():
+	if GameManager.best_time == 0.0:
+		$meilleur_tps.text = "Meilleur Temps : --:--:--"
+	else:
+		var texte_temps = GameManager.format_time(GameManager.best_time)
+		$meilleur_tps.text = "Meilleur Temps : " + texte_temps
 
 func _on_play_pressed():
 	GameManager.start_game()

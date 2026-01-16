@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://br38f1rkyev5i"]
+
+[ext_resource type="Script" uid="uid://cohe0kb58huvg" path="res://scripts/win.gd" id="1_pnk8a"]
+[ext_resource type="Texture2D" uid="uid://bwsx0d4w4pih5" path="res://assets/baddielands_main.png" id="2_gq6tj"]
+[ext_resource type="FontFile" uid="uid://dnhw78ke4xkqb" path="res://assets/JollyLodger-Regular.ttf" id="3_npi8v"]
+[ext_resource type="AudioStream" uid="uid://c26kiygxwolas" path="res://assets/MusicForDaGJ.mp3" id="4_npi8v"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pnk8a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.60120076, 0.60120076)
+texture = ExtResource("2_gq6tj")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_top = 63.0
+offset_right = 82.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_npi8v")
+theme_override_font_sizes/font_size = 50
+text = "VICTOIRE !"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 81.0
+offset_right = 29.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_npi8v")
+theme_override_font_sizes/font_size = 30
+text = "JOUER"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 130.0
+offset_right = 42.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_npi8v")
+theme_override_font_sizes/font_size = 30
+text = "QUITTER"
+
+[node name="tpsfinal" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -138.0
+offset_right = 32.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_npi8v")
+theme_override_font_sizes/font_size = 25
+text = "00:00:00"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_npi8v")
+volume_db = -16.714
+autoplay = true

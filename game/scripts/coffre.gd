@@ -45,6 +45,7 @@ func _on_body_entered(body: Node2D) -> void:
 			animer_pizza()
 			set_deferred("monitoring", false)
 			$Sprite2D.texture = load(ouvert)
+			GameManager.picked_up_pizza(body)
 			return
 		if body.inventory[0] != self.key_id:
 			body.show_message("Vous n'avez pas la bonne " + "[color=yellow]" + "clef" + "[/color]" + " !")

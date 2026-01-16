@@ -565,16 +565,20 @@ func update_objects_visibility(player: Player):
 	for obj: Node in objects:
 		if obj.is_in_group(player1.current_dim):
 			obj.visibility_layer |= 1
-			obj.get_node("Sprite2D").visibility_layer |= 1
+			if obj.has_node("Sprite2D"):
+				obj.get_node("Sprite2D").visibility_layer |= 1
 		else:
 			obj.visibility_layer &= ~1
-			obj.get_node("Sprite2D").visibility_layer &= ~1
+			if obj.has_node("Sprite2D"):
+				obj.get_node("Sprite2D").visibility_layer &= ~1
 		if obj.is_in_group(player2.current_dim):
 			obj.visibility_layer |= 2
-			obj.get_node("Sprite2D").visibility_layer |= 2
+			if obj.has_node("Sprite2D"):
+				obj.get_node("Sprite2D").visibility_layer |= 2
 		else:
 			obj.visibility_layer &= ~2
-			obj.get_node("Sprite2D").visibility_layer &= ~2
+			if obj.has_node("Sprite2D"):
+				obj.get_node("Sprite2D").visibility_layer &= ~2
 	
 	for map: TileMapLayer in maps:
 		if map.is_in_group(player1.current_dim):

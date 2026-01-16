@@ -6,10 +6,11 @@ const SPEED = 300.0
 signal switch_dim(player: Player)
 signal picked_up_pizza
 
-var current_dim = "B"
 @export_enum("Player1", "Player2") var role: String
-var inventory: Array[String] = []
 @export var clef_scene: PackedScene
+var inventory: Array[String] = []
+var current_dim = "B"
+var falling := false
 
 var controls = {
 	"Player1":
@@ -41,19 +42,20 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if get_tree().paused:
 		return
-	var direction_x := Input.get_axis(controls.get(role).get("left"), controls.get(role).get("right"))
-	var direction_y := Input.get_axis(controls.get(role).get("up"), controls.get(role).get("down"))
-	if direction_x:
-		velocity.x = direction_x * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if direction_y:
-		velocity.y = direction_y * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+	if not falling:
+		var direction_x := Input.get_axis(controls.get(role).get("left"), controls.get(role).get("right"))
+		var direction_y := Input.get_axis(controls.get(role).get("up"), controls.get(role).get("down"))
+		if direction_x:
+			velocity.x = direction_x * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		if direction_y:
+			velocity.y = direction_y * SPEED
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
 
-	update_animation()
-	move_and_slide()
+		update_animation()
+		move_and_slide()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	var action_switch = controls.get(role).get("switch")
@@ -151,3 +153,21 @@ func update_animation():
 func play_anim(animation_name: String):
 	if animation.has_animation(animation_name):
 		animation.play(animation_name)
+
+func fall(dest: Hole):
+	falling = true
+	var collisions = collision_layer
+	collision_layer = 0
+	play_anim("fall")
+	await animation.animation_finished
+	jump_out(dest.jump_out_point, collisions)
+
+func jump_out(jump_out_point: Vector2, collisions: int):
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", jump_out_point, Vector2(jump_out_point - global_position).length() / SPEED / 2)
+	await tween.finished
+	play_anim("jump_out")
+	await animation.animation_finished
+	falling = false
+	collision_layer = collisions
+	

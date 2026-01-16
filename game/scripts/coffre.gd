@@ -67,4 +67,5 @@ func animer_pizza():
 	await get_tree().create_timer(1.0).timeout
 	
 	print("Pizza récoltée !")
-	sprite_pizza.queue_free() 
+	if sprite_pizza:
+		sprite_pizza.queue_free() 

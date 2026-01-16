@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var timer_label = $timer
 @onready var pause_menu = $pause
-@onready var pause_music = $AudioStreamPlayer
+@onready var pause_music = $pause/AudioStreamPlayer
 
 func _ready():
 	pause_menu.visible = false
@@ -19,11 +19,12 @@ func toggle_pause():
 	var is_paused = not get_tree().paused
 	get_tree().paused = is_paused
 	pause_menu.visible = is_paused
-	pause_music.stream_paused = not is_paused
-	if is_paused:
-		$pause/ResumeButton.grab_focus()
+	if pause_music:
 		pause_music.stream_paused = not is_paused
-		if not pause_music.playing: pause_music.play()
+		if is_paused:
+			$pause/ResumeButton.grab_focus()
+			if not pause_music.playing: 
+				pause_music.play()
 
 func _on_resume_button_pressed():
 	toggle_pause()

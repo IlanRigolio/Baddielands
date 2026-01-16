@@ -18,3 +18,9 @@ func _on_play_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _input(event):
+	if event.is_action_pressed("ui_reset_score"): 
+		GameManager.best_time = 0.0
+		GameManager.save_score()
+		update_besttime()

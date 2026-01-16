@@ -28,8 +28,7 @@ func stop_game():
 func format_time(t: float) -> String:
 	var minutes = int(t / 60)
 	var seconds = int(t) % 60
-	var msecs = int((t - int(t)) * 100)
-	return "%02d:%02d:%02d" % [minutes, seconds, msecs]
+	return "%02d:%02d" % [minutes, seconds]
 
 func get_time_string() -> String:
 	return format_time(time_elapsed)
@@ -47,7 +46,7 @@ func win_game():
 	get_tree().change_scene_to_file("res://scenes/Win.tscn")
 	
 func check_high_score():
-	if best_time == 0.0 or time_elapsed < best_time:
+	if best_time <= 0.0 or time_elapsed < best_time:
 		best_time = time_elapsed
 		save_score()
 		

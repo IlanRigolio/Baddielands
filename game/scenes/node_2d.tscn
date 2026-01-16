@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://coi3xup54t3yg"]
+[gd_scene load_steps=35 format=3 uid="uid://coi3xup54t3yg"]
 
 [ext_resource type="Script" uid="uid://bpaq3fo7mra4m" path="res://addons/split_screen_2d/split_screen_2d.gd" id="1_4vge2"]
 [ext_resource type="Script" uid="uid://c0tms5cxgtg0t" path="res://scripts/game.gd" id="1_fws66"]
 [ext_resource type="Script" uid="uid://hst4xu3tv5o1" path="res://scripts/player.gd" id="2_04qyp"]
 [ext_resource type="PackedScene" uid="uid://c0lmirklkq38w" path="res://scenes/tile_map_layer.tscn" id="3_hh0fu"]
+[ext_resource type="PackedScene" uid="uid://cgej5rl3mvtck" path="res://scenes/hole.tscn" id="4_0q20i"]
 [ext_resource type="PackedScene" uid="uid://cg5f3l0aujfoy" path="res://scenes/tile_map_layer_green.tscn" id="5_f6ptj"]
 [ext_resource type="PackedScene" uid="uid://yda71n84sshf" path="res://scenes/clef.tscn" id="6_3m5ht"]
 [ext_resource type="PackedScene" uid="uid://dsjs43kovul5f" path="res://scenes/tile_map_layer_pink.tscn" id="6_hsdmi"]
@@ -475,6 +476,16 @@ metadata/_custom_type_script = "uid://bpaq3fo7mra4m"
 [node name="TileMapLayer" parent="SplitScreen2D" instance=ExtResource("3_hh0fu")]
 
 [node name="Level" type="Node" parent="SplitScreen2D/TileMapLayer"]
+
+[node name="Hole" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("4_0q20i")]
+position = Vector2(-1355, -1936.83)
+scale = Vector2(4.055, 4.055)
+jump_out_point = Vector2(-1355, -1861.395)
+
+[node name="Hole2" parent="SplitScreen2D/TileMapLayer/Level" instance=ExtResource("4_0q20i")]
+position = Vector2(-1036, -261.525)
+scale = Vector2(1.765, 1.765)
+jump_out_point = Vector2(-1036, -193.25)
 
 [node name="Maps" type="Node" parent="SplitScreen2D/TileMapLayer"]
 

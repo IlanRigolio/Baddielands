@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://rukmh3ayuuwe" path="res://scripts/hole.gd" id="1_lerre"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iyxdx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lerre"]
+size = Vector2(20, 7)
 
-[node name="Hole" type="Area2D"]
+[node name="Hole" type="Area2D" groups=["A", "B", "C"]]
+collision_layer = 0
+collision_mask = 7
 script = ExtResource("1_lerre")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_iyxdx")
+shape = SubResource("RectangleShape2D_lerre")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -8,7 +8,7 @@ func find_destination():
 	var nodes = get_node("..").get_children()
 	for node in nodes:
 		if node is Hole:
-			if node.id == id:
+			if node.id == id and node != self:
 				return node
 
 

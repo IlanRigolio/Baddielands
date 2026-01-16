@@ -1,6 +1,7 @@
 class_name SplitScreen2D
 extends Node2D
 
+var fades: Array[ColorRect] = []
 
 ## Emitted when the maximum number of players has been reached or exceeded.
 ## 
@@ -386,37 +387,41 @@ func _build_viewport(size: Vector2 = screen_size) -> SubViewportContainer:
 	var container := SubViewportContainer.new()
 	var viewport := SubViewport.new()
 	var camera := Camera2D.new()
+	var fade_layer := CanvasLayer.new()
+	fade_layer.layer = 100 
 
-	# Add the camera to the viewport.
+	# JE FAIS UN PUTAIN DE RECTA?GLE MOI MEME
+	var fade := ColorRect.new()
+	fade.color = Color.BLACK
+	fade.color.a = 0.0
+	fade.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	fade_layer.add_child(fade) 
+	viewport.add_child(fade_layer) 
+	fades.append(fade) 
+
 	container.add_child(viewport)
-
-	# Make the container expand to fill the space allocated to it.
 	container.set_anchors_preset(Control.PRESET_FULL_RECT)
-
-	# Add the camera to the viewport.
 	viewport.add_child(camera)
-
-	# Configure the viewport.
 	viewport.set_disable_3d(true)
 	viewport.set_size(size)
 	viewport.set_update_mode(SubViewport.UPDATE_ALWAYS)
 	viewport.set_transparent_background(transparent_background)
-	
 	var viewport_index = viewports.size() 
 	if viewport_index == 0:
 		viewport.canvas_cull_mask = 1
+		fade.visibility_layer = 1 
 	elif viewport_index == 1:
 		viewport.canvas_cull_mask = 2
+		fade.visibility_layer = 2 
 
-	# Allow the viewport to receive input events.
 	viewport.set_handle_input_locally(false)
 
-	# Add the viewport and camera to the arrays, so they can be accessed later.
 	cameras.append(camera)
 	viewports.append(viewport)
 	
 	return container
-
 
 ## Clear the viewport container and reparent the `play_area` node to `SplitScreen2D`.
 func _clear_viewport_container() -> void:
@@ -430,6 +435,7 @@ func _clear_viewport_container() -> void:
 	# Clear the arrays of viewports and cameras.
 	cameras = []
 	viewports = []
+	fades = []
 
 	# Remove the viewport container from the scene tree.
 	viewport_container.free()
@@ -489,9 +495,14 @@ func _safe_reparent(node: Node, new_parent: Node) -> void:
 @onready var maps_node: Node = get_tree().root.get_node("Game").get_node("SplitScreen2D").get_node("TileMapLayer").get_node("Maps")
 
 func switch_dim(player: Player):
+	var player_index = players.find(player)
+	var fade = fades[player_index]
 	var son = player.get_node("AudioStreamPlayer") 
 	son.pitch_scale = randf_range(0.9, 1.1)
 	son.play()
+	var tween = create_tween()
+	tween.tween_property(fade, "color:a", 1.0, 0.2)
+	await tween.finished
 	match player.role:
 		"Player1":
 			if player.current_dim == "A":
@@ -542,6 +553,9 @@ func switch_dim(player: Player):
 				player.collision_layer = 4
 				player.collision_mask = 4
 	update_objects_visibility(player)
+	
+	tween = create_tween()
+	tween.tween_property(fade, "color:a", 0.0, 0.2)
 
 func update_objects_visibility(player: Player):
 	var player1: Player = player.get_node("../player1")

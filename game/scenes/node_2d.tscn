@@ -401,21 +401,6 @@ offset_bottom = 40.0
 scale = Vector2(0.60131586, 0.60131586)
 texture = ExtResource("19_k6u5g")
 
-[node name="Label" type="Label" parent="HUD/pause"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -137.0
-offset_right = 26.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "PAUSE"
-
 [node name="ResumeButton" type="Button" parent="HUD/pause"]
 layout_mode = 1
 anchors_preset = 8

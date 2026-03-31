@@ -1,81 +1,81 @@
-# 🍕 Baddielands
+# Baddielands
 
 > **"Another Dimension, Another Domension"** > *A puzzle co-op experience made for Game Jam 4.*
 
-**Baddielands** est un jeu de coopération locale en écran scindé où la communication est votre seule chance de gagner. Traversez les dimensions, échangez des objets entre les mondes et battez le chrono !
+**Baddielands** is a split-screen local co-op game where communication is your only chance of winning. Cross dimensions, exchange items between worlds, and beat the clock!
 
 ---
 
-## 🌌 Le Concept
+## 🌌 The Concept
 
-Deux joueurs, trois dimensions, un seul objectif : la Pizza.
+Two players, three dimensions, one single goal: the Pizza.
 
-* **Joueur 1** est coincé dans la **Dimension A**.
-* **Joueur 2** est coincé dans la **Dimension C**.
-* **La Dimension B** est le point de rencontre neutre.
+* **Player 1** is stuck in **Dimension A**.
+* **Player 2** is stuck in **Dimension C**.
+* **Dimension B** is the neutral meeting point.
 
-**Le Twist :** Les clés trouvées en Dimension A ouvrent les coffres de la Dimension C (et inversement). Vous ne pouvez pas interagir avec les objets qui ne sont pas dans votre réalité.
+**The Twist:** Keys found in Dimension A open chests in Dimension C (and vice versa). You cannot interact with objects that are not in your reality.
 
-**La Boucle :**
-1. Trouvez une clé dans votre monde.
-2. Basculez en **Dimension B** (terrain d'entente).
-3. Retrouvez votre partenaire et **lâchez** la clé.
-4. Votre partenaire la ramasse et l'emmène dans sa dimension pour débloquer son coffre !
+**The Loop:**
+1. Find a key in your world.
+2. Switch to **Dimension B** (middle ground).
+3. Meet your partner and **drop** the key.
+4. Your partner picks it up and takes it to their dimension to unlock their chest!
 
 ---
 
-## 🎮 Contrôles (Clavier AZERTY)
+## 🎮 Controls (AZERTY Keyboard)
 
-Le jeu se joue en **Coop Locale** (2 joueurs sur le même clavier).
+The game is played in **Local Co-op** (2 players on the same keyboard).
 
-| Action | Joueur 1 (Gauche) | Joueur 2 (Droite) |
+| Action | Player 1 (Left) | Player 2 (Right) |
 | :--- | :---: | :---: |
-| **Se déplacer** | `Z`, `Q`, `S`, `D` | `Flèches Directionnelles` |
-| **Changer de dimension** | `E` | `Shift Droit` |
-| **Jeter un objet** | `A` | `P` |
-| **Menu / Pause** | `Echap` | `Echap` |
-| **Navigation Menus** | `touches pour se déplacer`| `touches pour se déplacer`
-| **Validation Menus** | `touches pour changer de dimension`| `touches pour changer de dimension`
-|**Reinitialiser le meilleur score**|`R`|`R`
+| **Move** | `Z`, `Q`, `S`, `D` | `Arrow Keys` |
+| **Change dimension** | `E` | `Right Shift` |
+| **Drop an item** | `A` | `P` |
+| **Menu / Pause** | `Esc` | `Esc` |
+| **Menu Navigation** | `movement keys`| `movement keys` |
+| **Menu Confirm** | `change dimension keys`| `change dimension keys` |
+| **Reset high score** | `R` | `R` |
 
 ---
 
-## ✨ Points forts
+## ✨ Key Features
 
-* **Puzzles Multidimensionnels :** Coordonnez-vous parfaitement pour transférer les objets.
-* **Split-Screen Dynamique :** S'adapte en temps réel à vos positions.
-* **Ambiance "Old Cinema" dans le menu:** Un shader unique et des transitions fluides.
-* **Système de Record :** Un mode Speedrun intégré avec sauvegarde automatique de votre meilleur temps.
-* **Musique Adaptative :** Une bande-son qui reste fluide à travers les sauts de dimension.
+* **Multidimensional Puzzles:** Coordinate perfectly to transfer items.
+* **Dynamic Split-Screen:** Adapts in real-time to your positions.
+* **"Old Cinema" Vibe in the menu:** A unique shader and smooth transitions.
+* **High Score System:** An integrated Speedrun mode with automatic saving of your best time.
+* **Adaptive Music:** A soundtrack that remains seamless across dimension jumps.
 
 ---
 
 ## 📥 Installation
 
-### Windows (en cours de déploiement)
-1. Téléchargez `Baddielands_Win.zip`.
-2. Extrayez le dossier.
-3. Lancez `Baddielands.exe`.
+### Windows (Coming soon)
+1. Download `Baddielands_Win.zip`.
+2. Extract the folder.
+3. Run `Baddielands.exe`.
 
-### Linux (Ubuntu) (en cours de déploiement)
-1. Téléchargez `Baddielands_Linux.zip`.
-2. Extrayez les fichiers.
-3. Ouvrez un terminal dans le dossier et tapez : `chmod +x launch.sh`
-4. Lancez le jeu via `./launch.sh`.
+### Linux (Ubuntu) (Coming soon)
+1. Download `Baddielands_Linux.zip`.
+2. Extract the files.
+3. Open a terminal in the folder and type: `chmod +x launch.sh`
+4. Run the game via `./launch.sh`.
 
-### Linux pour la GameJam !
-1. Clonez le dépot git : `git clone https://iut-info.univ-reims.fr/gitlab/thor0020/gj4.git`
-2. Lancez le run.sh
+### Linux for the GameJam!
+1. Clone the git repository: `git clone https://iut-info.univ-reims.fr/gitlab/thor0020/gj4.git`
+2. Run `run.sh`
 
-(à adapter)
-
----
-
-## 🛠️ Crédits
-
-* **Développement & Game Design :** Ilan Rigolio & Charles Thorin
-* **Art & Graphismes :** Lesliana Martin
-* **Audio & Musique :** Julien Baetens
+*(to be adapted)*
 
 ---
-*Développé sur le moteur **Godot 4.5.1**.*
+
+## 🛠️ Credits
+
+* **Development & Game Design:** Ilan Rigolio & Charles Thorin
+* **Art & Graphics:** Lesliana Martin
+* **Audio & Music:** Julien Baetens
+
+---
+*Developed on the **Godot 4.5.1** engine.*

@@ -31,7 +31,7 @@ members:  # Liste des membres de l'équipe (ajoutez un bloc par membre)
   - firstname: "Julien"             # Prénom
     lastname: "Baetens"               # Nom
     nickname: "K1EV"                   # Pseudo
-    group: "INF_S3_3B"                  # Groupe de TP (Ex : INF_S4_2B)
+    group: "INF_S3_3B (démission)"                  # Groupe de TP (Ex : INF_S4_2B)
     bestgame: "Garry's Mod"                    # Jeu préféré de tous les temps
     momentgame: "Minecraft" # Jeu préféré du moment
     ostgame: "Metro 2033 - Departure"       # Bande son / musique de jeu vidéo préférée
